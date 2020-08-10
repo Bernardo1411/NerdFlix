@@ -1,0 +1,2 @@
+export const INIT_MOVIES = 'INIT_MOVIES'
+export const INIT_MOVIES_FAILED = 'INIT_MOVIES_FAILED' 
