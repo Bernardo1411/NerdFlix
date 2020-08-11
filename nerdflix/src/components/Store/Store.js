@@ -1,12 +1,16 @@
-import React, {Fragment} from 'react'
+import React, { Fragment } from 'react'
 
 import ListOfMovies from '../ListOfMovies/ListOfMovies'
 
-const store = () => {
+const store = props => {
+    const { movies, error } = props.movies
+
+    const listOfMovies = !error ? <ListOfMovies movies={movies} /> : <p>{error}</p>
+
     return (
         <Fragment>
             <h2>Store</h2>
-            <ListOfMovies />
+            {listOfMovies}
         </Fragment>
     )
 }

@@ -3,11 +3,12 @@ import {updateObject} from '../../shared/utility'
 
 const initState = {
     movies:{},
-    error: null
+    error: null,
+    isLoaded: false
 }
 
 const initMovies = (state, movies) => {
-    return updateObject(state, {movies: movies})
+    return updateObject(state, {movies: movies, isLoaded: true})
 }
 
 const moviesReducer = (state = initState, action) => {
@@ -15,7 +16,7 @@ const moviesReducer = (state = initState, action) => {
         case actionType.INIT_MOVIES:
             return initMovies(state, action.payload)
         case actionType.INIT_MOVIES_FAILED:
-            return updateObject(state, {error: 'Can not reach the server'})
+            return updateObject(state, {error: 'Can not reach the server', isLoaded: true})
         default:
             return state
     }
