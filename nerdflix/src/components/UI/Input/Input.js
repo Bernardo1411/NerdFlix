@@ -1,7 +1,10 @@
 import React from 'react'
 
 const input = props => {
-    const { elementType, elementConfig, value, change, label } = props
+    const { elementType, elementConfig, value, change, label, touched, invalid } = props
+
+    console.log('touched: ', touched, 'invalid: ', invalid)
+
     let inputElement = null
 
     switch (elementType) {
@@ -40,10 +43,10 @@ const input = props => {
     }
 
     return (
-        <form>
+        <div>
             <label>{label}</label>
             {inputElement}
-        </form>
+        </div>
     )
 }
 
