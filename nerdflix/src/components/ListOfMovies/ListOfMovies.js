@@ -3,9 +3,9 @@ import React, {memo} from 'react'
 import Card from './Card/Card'
 
 const listOfMovies = props => {
-    const {movies} = props
+    const {movies, movieBuyer, showButton} = props
 
-    const isFullObject = movies => {
+    const isFullObject = movies => { 
         return (!!movies) && Object.getPrototypeOf(movies) === Object.prototype && Object.keys(movies).length !== 0
     }
 
@@ -16,7 +16,9 @@ const listOfMovies = props => {
                      title={movieId} 
                      runningTime={movie.runningTime}
                      buyers={movie.buyers}
-                     IMDb={movie.IMDb} />
+                     IMDb={movie.IMDb}
+                     showButton={showButton}
+                     movieBuyer={movieBuyer} />
     }) : <p>No movie was found</p>
 
     return (

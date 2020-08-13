@@ -5,7 +5,8 @@ import { updateObject } from '../../shared/utility'
 
 const bestSellers = props => {
     const { movies, error } = props.movies
-    
+    const { showButton } = props
+
     let newObjectMovies = {}
     Object.keys(movies).forEach(movieId => {
         if (movies[movieId].buyers >= 30) {
@@ -14,7 +15,10 @@ const bestSellers = props => {
     }
     )
 
-    const listOfMovies = !error ? <ListOfMovies movies={newObjectMovies} /> : <p>{error}</p>
+    const listOfMovies = !error ?
+        <ListOfMovies
+            movies={newObjectMovies}
+            showButton={showButton} /> : <p>{error}</p>
 
     return (
         <Fragment>

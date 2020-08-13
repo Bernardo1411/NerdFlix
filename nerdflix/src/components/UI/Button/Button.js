@@ -1,8 +1,10 @@
 import React from 'react'
 
 const button = props => {
+    const {clicked} = props
+
     return (
-        <button>
+        <button onClick={clicked}>
             {props.children}
         </button>
     )

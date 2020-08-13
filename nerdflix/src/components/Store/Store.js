@@ -4,8 +4,13 @@ import ListOfMovies from '../ListOfMovies/ListOfMovies'
 
 const store = props => {
     const { movies, error } = props.movies
+    const { movieBuyer, showButton } = props
 
-    const listOfMovies = !error ? <ListOfMovies movies={movies} /> : <p>{error}</p>
+    const listOfMovies = !error ?
+        <ListOfMovies
+            movies={movies}
+            movieBuyer={movieBuyer}
+            showButton={showButton} /> : <p>{error}</p>
 
     return (
         <Fragment>

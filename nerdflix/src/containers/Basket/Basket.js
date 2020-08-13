@@ -1,10 +1,15 @@
 import React, { Component, Fragment } from 'react'
 import { Route } from 'react-router-dom'
+import {connect} from 'react-redux'
 
 import ListOfMovies from '../../components/ListOfMovies/ListOfMovies'
 import PurchaseCompleted from '../../components/PurchaseCompleted/PurchaseCompleted'
 
 class Basket extends Component {
+    componentDidMount(){
+        
+    }
+
     render() {
         return (
             <Fragment>
@@ -16,4 +21,10 @@ class Basket extends Component {
     }
 }
 
-export default Basket
+const mapDispatchToProps = dispatch => {
+    return{
+        
+    }
+}
+
+export default connect(null, mapDispatchToProps)(Basket)

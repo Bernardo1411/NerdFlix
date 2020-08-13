@@ -1,8 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Button from '../../UI/Button/Button'
+
 const card = props => {
-    const { runningTime, IMDb, buyers, title } = props
+    const { runningTime, IMDb, buyers, title, movieBuyer, showButton } = props
+
+    const movieDataProvider = (e) => {
+        e.preventDefault()
+        movieBuyer({
+            title,
+            IMDb,
+            runningTime,
+        })
+    }
+
+    const button = showButton ? <Button clicked={movieDataProvider} >Buy Now</Button> : null
+
     return (
         <div>
             <img src='' alt='Movie figure' />
@@ -12,6 +26,7 @@ const card = props => {
                 <p>IMDb: {IMDb}</p>
                 <p>Buyers: {buyers}</p>
             </div>
+            {button}
         </div>
     )
 }

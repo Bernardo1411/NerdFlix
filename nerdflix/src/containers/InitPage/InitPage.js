@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 import BestSellers from '../../components/BestSellers/BestSellers'
 import Store from '../../components/Store/Store'
-import { initMovies } from '../../store/actions/movies'
+import { initMovies, order } from '../../store/actions/index'
 import Spinner from '../../components/UI/Spinner/Spinner'
 
 class InitPage extends Component {
@@ -11,13 +11,23 @@ class InitPage extends Component {
         this.props.initMovies()
     }
 
+    buyMovieHandler = (movie) => {
+        const token = localStorage.getItem('token')
+        this.props.order(movie, token)
+    }
+
     render() {
         const movies = this.props.movies
 
         const store = this.props.isLoaded ?
             <Fragment>
-                <BestSellers movies={movies} />
-                <Store movies={movies} />
+                <BestSellers
+                    movies={movies}
+                    isForSale={false} />
+                <Store
+                    movies={movies}
+                    showButton={true}
+                    movieBuyer={this.buyMovieHandler.bind(this)} />
             </Fragment> : <Spinner />
 
         return (
@@ -38,7 +48,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        initMovies: () => dispatch(initMovies())
+        initMovies: () => dispatch(initMovies()),
+        order: (movieData, token) => dispatch(order(movieData, token))
     }
 }
 

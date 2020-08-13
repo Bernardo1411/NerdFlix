@@ -2,5 +2,9 @@ export {
     initMovies
 } from './movies'
 export {
-    auth
+    auth,
+    authCheckValidity
 } from './auth'
+export{
+    order
+}from './order'
