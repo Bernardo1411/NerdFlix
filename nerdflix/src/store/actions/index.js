@@ -6,5 +6,6 @@ export {
     authCheckValidity
 } from './auth'
 export{
-    order
+    order,
+    fetchOrder
 }from './order'

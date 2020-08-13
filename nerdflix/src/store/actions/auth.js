@@ -68,7 +68,6 @@ export const auth = (email, password, isSignup) => {
 export const authCheckValidity = () => {
     return dispatch => {
         const idToken = localStorage.getItem('token')
-    
         if(!idToken){
             dispatch(logout())
         }else{

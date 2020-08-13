@@ -40,3 +40,44 @@ export const order = (movie, token) => {
         })
     }
 }
+
+export const fetchOrderStart = (moviesOrders) => {
+    return {
+        type: actionType.FETCH_ORDER_START
+    }
+}
+
+export const fetchOrderSuccess = (moviesOrders) => {
+    return {
+        type: actionType.FETCH_ORDER_SUCCESS,
+        moviesOrders
+    }
+}
+
+export const fetchOrderFailed = (error) => {
+    return {
+        type: actionType.FETCH_ORDER_FAILED,
+        error
+    }
+}
+
+export const fetchOrder = (userId, idToken) => {
+    return dispatch => {
+        dispatch(fetchOrderStart())
+        axios.get('/order.json?auth=' + idToken + '&orderBy="userId"&equalTo="' + userId + '"')
+        .then(res => {
+            let moviesOrders = []
+            for(let key in res.data){
+                moviesOrders.push({
+                    ...res.data[key],
+                    id: key
+                })
+            }
+
+            dispatch(fetchOrderSuccess(moviesOrders))
+        })
+        .catch(error => {
+            dispatch(fetchOrderFailed(error))
+        })
+    }
+}
