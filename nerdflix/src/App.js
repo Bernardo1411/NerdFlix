@@ -1,14 +1,25 @@
 import React, { Component } from 'react';
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 import InitPage from './containers/InitPage/InitPage'
-import Basket from './containers/Basket/Basket'
-import Login from './containers/Auth/Login/Login'
-import SignUp from './containers/Auth/SignUp/SignUp'
 import Logout from './containers/Auth/Logout/Logout'
 import {authCheckValidity} from './store/actions/index'
+import Layout from './hoc/Layout/Layout'
+import asyncComponent from './hoc/asyncComponent/asyncComponent'
 import './App.css';
+
+const asyncBasket = asyncComponent(() => {
+  return import('./containers/Basket/Basket')
+})
+
+const asyncLogin = asyncComponent(() => {
+  return import('./containers/Auth/Login/Login')
+})
+
+const asyncSignup = asyncComponent(() => {
+  return import('./containers/Auth/SignUp/SignUp')
+})
 
 class App extends Component {
   componentDidMount(){
@@ -16,15 +27,30 @@ class App extends Component {
   }
 
   render() {
+
+    let renderedComponents = 
+    <Switch>
+      <Route path='/login' component={asyncLogin} />
+      <Route path='/signup' component={asyncSignup} />
+      <Route path='/' exact component={InitPage} />
+      <Redirect to='/' />
+    </Switch>
+
+    if(this.props.isAuth){
+      renderedComponents = 
+      <Switch>
+      <Route path='/basket' component={asyncBasket} />
+      <Route path='/logout' component={Logout} />
+      <Route path='/' exact component={InitPage} />
+      <Redirect to='/' />
+    </Switch>
+    }
+
     return (
       <div className="App">
-        <Switch>
-          <Route path='/basket' component={Basket} />
-          <Route path='/login' exact component={Login} />
-          <Route path='/logout' exact component={Logout} />
-          <Route path='/signup' exact component={SignUp} />
-          <Route path='/' exact component={InitPage} />
-        </Switch>
+        <Layout>
+          {renderedComponents}
+        </Layout>
       </div>
     );
   }
@@ -32,7 +58,7 @@ class App extends Component {
 
 const mapStateToProps = state => {
   return{
-    isAuth: state.auth.token
+    isAuth: state.auth.idToken,
   }
 }
 

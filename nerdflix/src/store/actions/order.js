@@ -22,16 +22,17 @@ export const orderFailed = (error) => {
     }
 }
 
-export const order = (movie, token) => {
+export const order = (movie, userId, token) => {
     const movieData = {
         runningTime: movie.runningTime,
         IMDb: movie.IMDb,
-        title: movie.title
+        title: movie.title,
+        userId: userId
     }
 
     return dispatch => {
         dispatch(orderStart())
-        axios.post('/order.json?auth=' + token, movieData)
+        axios.post(`/user/${userId}/order.json?auth=` + token, movieData)
         .then(res => {
             dispatch(orderSuccess(movieData))
         })
@@ -64,17 +65,9 @@ export const fetchOrderFailed = (error) => {
 export const fetchOrder = (userId, idToken) => {
     return dispatch => {
         dispatch(fetchOrderStart())
-        axios.get('/order.json?auth=' + idToken + '&orderBy="userId"&equalTo="' + userId + '"')
+        axios.get(`/user/${userId}/order.json?auth=` + idToken )
         .then(res => {
-            let moviesOrders = []
-            for(let key in res.data){
-                moviesOrders.push({
-                    ...res.data[key],
-                    id: key
-                })
-            }
-
-            dispatch(fetchOrderSuccess(moviesOrders))
+            dispatch(fetchOrderSuccess(res.data))
         })
         .catch(error => {
             dispatch(fetchOrderFailed(error))

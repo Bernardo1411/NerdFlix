@@ -3,6 +3,7 @@ export {
 } from './movies'
 export {
     auth,
+    logout,
     authCheckValidity
 } from './auth'
 export{

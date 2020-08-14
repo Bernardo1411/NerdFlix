@@ -35,7 +35,7 @@ card.propTypes = {
     runningTime: PropTypes.number.isRequired,
     IMDb: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    buyers: PropTypes.number.isRequired
+    buyers: PropTypes.number
 }
 
 export default card

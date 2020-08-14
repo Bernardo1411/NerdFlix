@@ -2,7 +2,7 @@ import * as actionType from '../actions/actionTypes'
 import { updateObject } from '../../shared/utility'
 
 const initState = {
-    movieData: [],
+    movieData: {},
     error: null,
     isLoaded: true,
 }

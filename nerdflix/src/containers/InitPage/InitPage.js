@@ -13,7 +13,8 @@ class InitPage extends Component {
 
     buyMovieHandler = (movie) => {
         const token = localStorage.getItem('token')
-        this.props.order(movie, token)
+        const userId = localStorage.getItem('userId')
+        this.props.order(movie, userId, token)
     }
 
     render() {
@@ -49,7 +50,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
     return {
         initMovies: () => dispatch(initMovies()),
-        order: (movieData, token) => dispatch(order(movieData, token))
+        order: (movieData, userId, token) => dispatch(order(movieData, userId, token))
     }
 }
 
