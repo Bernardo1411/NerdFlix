@@ -11,7 +11,9 @@ import { fetchOrder } from '../../store/actions/index'
 
 class Basket extends Component {
     state = {
-        isOrderCompleted: false
+        isOrderCompleted: false,
+        openModal: false,
+        didConfirm: false
     }
 
     componentDidMount() {
@@ -19,7 +21,11 @@ class Basket extends Component {
     }
 
     completeOrder = () => {
-        this.setState({ isOrderCompleted: true })
+        this.setState({ isOrderCompleted: true, openModal: true })
+    }
+
+    confirmationHandler = (isConfirm) => {
+        this.setState({didConfirm: isConfirm, openModal: false})
     }
 
     render() {
@@ -32,7 +38,7 @@ class Basket extends Component {
                 </NavLink>
             </Fragment>
 
-        if (this.state.isOrderCompleted) {
+        if (this.state.isOrderCompleted && this.state.didConfirm) {
             basketContent = <Route path={this.props.match.url + '/purchased'} component={PurchaseCompleted} />
         }
 
@@ -42,7 +48,7 @@ class Basket extends Component {
 
         return (
             <Fragment>
-                <Modal display={false}>
+                <Modal display={this.state.openModal} clicked={this.confirmationHandler.bind(this)}>
                     <h1>Basket</h1>
                     {basketContent}
                 </Modal>
