@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react'
 
 import Navigation from '../../components/Navigation/Navigation'
+import Footer from '../../components/Footer/Footer'
 
 class Layout extends Component{
 
@@ -9,6 +10,7 @@ class Layout extends Component{
             <Fragment>
                 <Navigation />
                 {this.props.children}
+                <Footer />
             </Fragment>
         )
     }

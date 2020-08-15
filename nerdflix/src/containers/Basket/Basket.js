@@ -1,10 +1,12 @@
 import React, { Component, Fragment } from 'react'
-import { Route } from 'react-router-dom'
+import { Route, NavLink } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import ListOfMovies from '../../components/ListOfMovies/ListOfMovies'
 import PurchaseCompleted from '../../components/PurchaseCompleted/PurchaseCompleted'
 import Button from '../../components/UI/Button/Button'
+import Spinner from '../../components/UI/Spinner/Spinner'
+import Modal from '../../components/UI/Modal/Modal'
 import { fetchOrder } from '../../store/actions/index'
 
 class Basket extends Component {
@@ -17,36 +19,44 @@ class Basket extends Component {
     }
 
     completeOrder = () => {
-        this.setState({isOrderCompleted: true})
+        this.setState({ isOrderCompleted: true })
     }
 
     render() {
-        let basketContent = 
-        <Fragment>
-            <ListOfMovies 
-                movies={this.props.orderedMovies}/>
-                <Button clicked={this.completeOrder}>Complete Order</ Button>
-        </Fragment>
+        let basketContent =
+            <Fragment>
+                <ListOfMovies
+                    movies={this.props.orderedMovies} />
+                <NavLink to={this.props.match.url + '/purchased'}>
+                    <Button clicked={this.completeOrder}>Complete Order</ Button>
+                </NavLink>
+            </Fragment>
 
-        if(this.state.isOrderCompleted){
+        if (this.state.isOrderCompleted) {
             basketContent = <Route path={this.props.match.url + '/purchased'} component={PurchaseCompleted} />
+        }
+
+        if (!this.props.isLoaded) {
+            basketContent = <Spinner />
         }
 
         return (
             <Fragment>
-                <h1>Basket</h1>
-                {basketContent}
+                <Modal display={false}>
+                    <h1>Basket</h1>
+                    {basketContent}
+                </Modal>
             </Fragment>
         )
     }
 }
 
 const mapStateToProps = state => {
-    console.log(state.order.movieData)
     return {
         idToken: state.auth.idToken,
         userId: state.auth.userId,
-        orderedMovies: state.order.movieData
+        orderedMovies: state.order.movieData,
+        isLoaded: state.order.isLoaded
     }
 }
 

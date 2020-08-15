@@ -27,7 +27,6 @@ class App extends Component {
   }
 
   render() {
-
     let renderedComponents = 
     <Switch>
       <Route path='/login' component={asyncLogin} />
@@ -39,8 +38,8 @@ class App extends Component {
     if(this.props.isAuth){
       renderedComponents = 
       <Switch>
-      <Route path='/basket' component={asyncBasket} />
       <Route path='/logout' component={Logout} />
+      <Route path='/basket' component={asyncBasket} />
       <Route path='/' exact component={InitPage} />
       <Redirect to='/' />
     </Switch>
