@@ -14,7 +14,7 @@ const confirmationCheck = props => {
 
     return(
         <div>
-            <h3>Are you sure?</h3>
+            {props.children}
             <Button clicked={confirm}>OK</Button>
             <Button clicked={cancel}>Cancel</Button>
         </div>

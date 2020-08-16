@@ -13,10 +13,11 @@ const listOfMovies = props => {
         const movie = movies[movieId]
 
         return <Card key={movieId}
-                     title={movieId} 
+                     title={movieId}
                      runningTime={movie.runningTime}
                      buyers={movie.buyers}
                      IMDb={movie.IMDb}
+                     image={movie.image}
                      showButton={showButton}
                      movieBuyer={movieBuyer} />
     }) : <p>No movie was found</p>

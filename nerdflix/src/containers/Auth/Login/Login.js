@@ -100,6 +100,7 @@ class Login extends Component {
                 <form onSubmit={this.submitAuthHandler}>
                     {form}
                     <Button>SUBMIT</Button>
+                    <p>{this.props.error}</p>
                 </form>
             </div>
         )
@@ -109,7 +110,8 @@ class Login extends Component {
 const mapStateToProps = state => {
     return {
         isLoading: state.auth.isLoading,
-        isAuthenticated: state.auth.isAuthenticated
+        isAuthenticated: state.auth.isAuthenticated,
+        error: state.auth.error
     }
 }
 

@@ -27,6 +27,8 @@ export const order = (movie, userId, token) => {
         runningTime: movie.runningTime,
         IMDb: movie.IMDb,
         title: movie.title,
+        buyers: movie.buyers,
+        image: movie.image,
         userId: userId
     }
 
@@ -42,7 +44,7 @@ export const order = (movie, userId, token) => {
     }
 }
 
-export const fetchOrderStart = (moviesOrders) => {
+export const fetchOrderStart = () => {
     return {
         type: actionType.FETCH_ORDER_START
     }

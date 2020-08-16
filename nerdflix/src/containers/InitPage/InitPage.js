@@ -5,16 +5,26 @@ import BestSellers from '../../components/BestSellers/BestSellers'
 import Store from '../../components/Store/Store'
 import { initMovies, order } from '../../store/actions/index'
 import Spinner from '../../components/UI/Spinner/Spinner'
+import Modal from '../../components/UI/Modal/Modal'
 
 class InitPage extends Component {
+    state = {
+        displayModal: false
+    }
+
     componentDidMount() {
         this.props.initMovies()
+    }
+
+    showModal = (showModal) => {
+        this.setState({displayModal: showModal})
     }
 
     buyMovieHandler = (movie) => {
         const token = localStorage.getItem('token')
         const userId = localStorage.getItem('userId')
         this.props.order(movie, userId, token)
+        this.showModal(true)
     }
 
     render() {
@@ -22,13 +32,15 @@ class InitPage extends Component {
 
         const store = this.props.isLoaded ?
             <Fragment>
-                <BestSellers
-                    movies={movies}
-                    isForSale={false} />
-                <Store
-                    movies={movies}
-                    showButton={true}
-                    movieBuyer={this.buyMovieHandler.bind(this)} />
+                <Modal display={this.state.displayModal} clicked={this.showModal.bind(this)} isAlert={true}>
+                    <BestSellers
+                        movies={movies}
+                        isForSale={false} />
+                    <Store
+                        movies={movies}
+                        showButton={true}
+                        movieBuyer={this.buyMovieHandler.bind(this)} />
+                </Modal>
             </Fragment> : <Spinner />
 
         return (

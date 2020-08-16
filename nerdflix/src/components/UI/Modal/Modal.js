@@ -4,6 +4,7 @@ import ConfirmationCheck from '../../confirmationCheck/confirmationCheck'
 import BackDrop from '../Backdrop/Backdrop'
 
 const modal = props => {
+    const {isAlert} = props
 
     let modalDisplay = props.children
 
@@ -12,7 +13,9 @@ const modal = props => {
             <Fragment>
                 <BackDrop clicked={props.clicked}/>
                 <h1>Modal</h1>
-                <ConfirmationCheck clicked={props.clicked}/>
+                {
+                   !isAlert ? <ConfirmationCheck clicked={props.clicked}/> : <p>Added to your basket</p>
+                }
                 {props.children}
             </Fragment>
     }

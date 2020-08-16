@@ -18,7 +18,7 @@ const authReducer = (state = initState, action) => {
         case actionType.AUTH_FAILED:
             return updateObject(state, {error: action.error, isAuthenticated: false, isLoading: false})
         case actionType.AUTH_LOGOUT:
-            return updateObject(state, {userId: null, idToken: null, isAuthenticated: null})
+            return updateObject(state, {userId: null, idToken: null, isAuthenticated: false})
         default:
             return state
     }

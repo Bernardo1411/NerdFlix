@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import Button from '../../UI/Button/Button'
 
 const card = props => {
-    const { runningTime, IMDb, buyers, title, movieBuyer, showButton } = props
+    const { runningTime, IMDb, buyers, title, movieBuyer, showButton, image } = props
 
     const movieDataProvider = (e) => {
         e.preventDefault()
@@ -12,14 +12,16 @@ const card = props => {
             title,
             IMDb,
             runningTime,
+            image,
+            buyers
         })
     }
 
-    const button = showButton ? <Button clicked={movieDataProvider} >Buy Now</Button> : null
+    let button = showButton ? <Button clicked={movieDataProvider} >Buy Now</Button> : null
 
     return (
         <div>
-            <img src='' alt='Movie figure' />
+            <img src={image} alt='Movie figure' />
             <div>
                 <h4>{title}</h4>
                 <p>Running Time: {runningTime} minutes</p>
@@ -35,7 +37,7 @@ card.propTypes = {
     runningTime: PropTypes.number.isRequired,
     IMDb: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    buyers: PropTypes.number
+    buyers: PropTypes.number.isRequired
 }
 
 export default card

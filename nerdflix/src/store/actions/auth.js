@@ -61,7 +61,7 @@ export const auth = (email, password, isSignup) => {
                 return dispatch(authSuccess(res.data.localId, res.data.idToken))
             })
             .catch(error => {
-                return dispatch(authFailed(error.response.data.error))
+                return dispatch(authFailed('e-mail or password incorrect'))
             })
     }
 }

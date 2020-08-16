@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {Route, Switch, Redirect} from 'react-router-dom'
-import {connect} from 'react-redux'
+import { Route, Switch, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 import InitPage from './containers/InitPage/InitPage'
 import Logout from './containers/Auth/Logout/Logout'
-import {authCheckValidity} from './store/actions/index'
+import { authCheckValidity } from './store/actions/index'
 import Layout from './hoc/Layout/Layout'
 import asyncComponent from './hoc/asyncComponent/asyncComponent'
 import './App.css';
@@ -22,27 +22,27 @@ const asyncSignup = asyncComponent(() => {
 })
 
 class App extends Component {
-  componentDidMount(){
+  componentDidMount() {
     this.props.authCheckValidity()
   }
 
   render() {
-    let renderedComponents = 
-    <Switch>
-      <Route path='/login' component={asyncLogin} />
-      <Route path='/signup' component={asyncSignup} />
-      <Route path='/' exact component={InitPage} />
-      <Redirect to='/' />
-    </Switch>
-
-    if(this.props.isAuth){
-      renderedComponents = 
+    let renderedComponents =
       <Switch>
-      <Route path='/logout' component={Logout} />
-      <Route path='/basket' component={asyncBasket} />
-      <Route path='/' exact component={InitPage} />
-      <Redirect to='/' />
-    </Switch>
+        <Route path='/login' component={asyncLogin} />
+        <Route path='/signup' component={asyncSignup} />
+        <Route path='/' exact component={InitPage} />
+        <Redirect to='/' />
+      </Switch>
+
+    if (this.props.isAuth || localStorage.getItem('token')) {
+      renderedComponents =
+        <Switch>
+          <Route path='/logout' component={Logout} />
+          <Route path='/basket' component={asyncBasket} />
+          <Route path='/' exact component={InitPage} />
+          <Redirect to='/' />
+        </Switch>
     }
 
     return (
@@ -56,8 +56,8 @@ class App extends Component {
 }
 
 const mapStateToProps = state => {
-  return{
-    isAuth: state.auth.idToken,
+  return {
+    isAuth: state.auth.idToken !== null
   }
 }
 

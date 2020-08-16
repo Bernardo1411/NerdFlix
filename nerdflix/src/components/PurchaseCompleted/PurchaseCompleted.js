@@ -29,7 +29,7 @@ const PurchaseCompleted = (props) => {
 
         setTimeout(() => {
             clearInterval(timer)
-            props.history.replace('/basket')
+            props.history.replace('/')
         }, 3000)
     }, [props.history])
 
