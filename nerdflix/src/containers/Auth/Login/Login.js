@@ -6,6 +6,7 @@ import Button from '../../../components/UI/Button/Button'
 import { updateObject, checkValidity } from '../../../shared/utility'
 import * as actionType from '../../../store/actions/index'
 import Spinner from '../../../components/UI/Spinner/Spinner'
+import classes from './Login.module.css'
 
 class Login extends Component {
 
@@ -95,12 +96,15 @@ class Login extends Component {
         }
 
         return (
-            <div>
+            <div className={classes.Login}>
                 <h1>Login</h1>
-                <form onSubmit={this.submitAuthHandler}>
+                <form
+                className={classes.Form}
+                onSubmit={this.submitAuthHandler}>
                     {form}
-                    <Button>SUBMIT</Button>
-                    <p>{this.props.error}</p>
+                    <Button 
+                    disabled={!(this.state.formControl.email.valid && this.state.formControl.password.valid)}>SUBMIT</Button>
+                    <p className={classes.errorMessage}>{this.props.error}</p>
                 </form>
             </div>
         )

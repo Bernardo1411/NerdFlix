@@ -1,15 +1,20 @@
 import React from 'react'
 
+import classes from './Input.module.css'
+
 const input = props => {
     const { elementType, elementConfig, value, change, label, touched, invalid } = props
 
-    console.log('touched: ', touched, 'invalid: ', invalid)
-
+    let validationStyle = [classes.Input]
     let inputElement = null
+
+    if(invalid && touched){
+        validationStyle.push(classes.Invalid)
+    }
 
     switch (elementType) {
         case ('input'):
-            inputElement = <input
+            inputElement = <input className={validationStyle.join(' ')}
                 {...elementConfig}
                 value={value}
                 onChange={change}
@@ -23,7 +28,7 @@ const input = props => {
             />
             break
         case ('select'):
-            inputElement = <select>
+            inputElement = <select className={classes.Select}>
                 {
                     elementConfig.option.map(option => {
                         return (<option
@@ -43,7 +48,7 @@ const input = props => {
     }
 
     return (
-        <div>
+        <div className={classes.Form}>
             <label>{label}</label>
             {inputElement}
         </div>
