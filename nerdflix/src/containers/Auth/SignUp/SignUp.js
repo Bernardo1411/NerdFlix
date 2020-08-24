@@ -114,7 +114,6 @@ class SignUp extends Component {
 
         return (
             <div>
-                <h1>SignUp</h1>
                 <form 
                 className={classes.Form}
                 onSubmit={this.submitAuthHandler}>

@@ -1,0 +1,16 @@
+.list-item_link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary_color);
+    font-weight: bold;
+    height: 100%;
+    width: 100%;
+}
+
+.list-item_link:hover,
+.list-item_link.active{
+    background: linear-gradient(to bottom, var(--primary_color) 65%, #0f7791 80%, #0d6d85 90%, #0c5c70 98%);
+    color: var(--secondary-color);
+}

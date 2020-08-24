@@ -1,0 +1,24 @@
+.main-page_footer{
+    display: flex;
+    bottom: 0;
+    align-items: center;
+    justify-content: left;
+    background: linear-gradient(to top, var(--secondary-color) 65%, #6e6e6e 80%, #5c5c5c 90%, #3f3f3f 98%);
+    padding: 20px;
+}
+
+.main-page_footer div{
+    padding-right: 10%;
+    border-right: solid 1px #3f3f3f;
+}
+
+.main-page_footer p{
+    color: #3f3f3f;
+    font-size: 1.1rem
+}
+
+.main-page_footer h2{
+    margin: 0 auto;
+    color: #3f3f3f;
+    font-size: 2rem;
+}

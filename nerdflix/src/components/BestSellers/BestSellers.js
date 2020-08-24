@@ -1,7 +1,8 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ListOfMovies from '../ListOfMovies/ListOfMovies'
 import { updateObject } from '../../shared/utility'
+import './BestSellers.css'
 
 const bestSellers = props => {
     const { movies, error } = props.movies
@@ -21,10 +22,10 @@ const bestSellers = props => {
             showButton={showButton} /> : <p>{error}</p>
 
     return (
-        <Fragment>
-            <h2>bestSellers</h2>
+        <div className='main_div-bestSeller'>
+            <h2>Bestsellers</h2>
             {listOfMovies}
-        </Fragment>
+        </div>
     )
 }
 

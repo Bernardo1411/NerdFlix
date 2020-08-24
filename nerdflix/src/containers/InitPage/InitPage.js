@@ -6,6 +6,7 @@ import Store from '../../components/Store/Store'
 import { initMovies, order } from '../../store/actions/index'
 import Spinner from '../../components/UI/Spinner/Spinner'
 import Modal from '../../components/UI/Modal/Modal'
+import './InitPage.css'
 
 class InitPage extends Component {
     state = {
@@ -44,10 +45,9 @@ class InitPage extends Component {
             </Fragment> : <Spinner />
 
         return (
-            <Fragment>
-                <h1>INITPAGE</h1>
+            <div className="main-page">
                 {store}
-            </Fragment>
+            </div>
         )
     }
 }
