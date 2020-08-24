@@ -8,5 +8,6 @@ export {
 } from './auth'
 export{
     order,
-    fetchOrder
+    fetchOrder,
+    removeOrder
 }from './order'

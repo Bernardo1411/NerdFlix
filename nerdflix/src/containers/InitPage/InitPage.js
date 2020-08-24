@@ -39,7 +39,7 @@ class InitPage extends Component {
                         isForSale={false} />
                     <Store
                         movies={movies}
-                        showButton={true}
+                        showButton={'Buy Now'}
                         movieBuyer={this.buyMovieHandler.bind(this)} />
                 </Modal>
             </Fragment> : <Spinner />

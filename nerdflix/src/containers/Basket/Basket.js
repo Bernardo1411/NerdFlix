@@ -7,7 +7,7 @@ import PurchaseCompleted from '../../components/PurchaseCompleted/PurchaseComple
 import Button from '../../components/UI/Button/Button'
 import Spinner from '../../components/UI/Spinner/Spinner'
 import Modal from '../../components/UI/Modal/Modal'
-import { fetchOrder } from '../../store/actions/index'
+import { fetchOrder, removeOrder } from '../../store/actions/index'
 import './Basket.css'
 
 class Basket extends Component {
@@ -29,10 +29,16 @@ class Basket extends Component {
         this.setState({ didConfirm: isConfirm, openModal: false })
     }
 
+    removeItem = (orderId) => {
+        this.props.removeOrder(this.props.userId, orderId.title, this.props.idToken)
+    }
+
     render() {
         let basketContent =
             <Fragment>
                 <ListOfMovies
+                    showButton={'Remove'}
+                    movieBuyer={this.removeItem.bind(this)}
                     movies={this.props.orderedMovies} />
                 <NavLink to={this.props.match.url + '/purchased'}>
                     <Button clicked={this.completeOrder}>Complete Order</ Button>
@@ -69,7 +75,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchOrder: (userId, idToken) => dispatch(fetchOrder(userId, idToken))
+        fetchOrder: (userId, idToken) => dispatch(fetchOrder(userId, idToken)),
+        removeOrder: (userId, orderId, idToken) => dispatch(removeOrder(userId, orderId, idToken))
     }
 }
 

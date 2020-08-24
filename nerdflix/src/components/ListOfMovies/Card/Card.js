@@ -19,7 +19,7 @@ const card = props => {
     }
 
     let button = showButton ? <Button
-    clicked={movieDataProvider} >Buy Now</Button> : null
+clicked={movieDataProvider} >{showButton}</Button> : null
 
     return (
         <li className="store-list_item">
