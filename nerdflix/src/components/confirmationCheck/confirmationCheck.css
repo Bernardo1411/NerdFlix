@@ -1,0 +1,12 @@
+.confirmationCheck{
+    position: fixed;
+    top: 30%;
+    height: 30%;
+    width: 40%;
+    z-index: 13;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #494949;
+    border-radius: 10px
+}

@@ -8,6 +8,7 @@ import Button from '../../components/UI/Button/Button'
 import Spinner from '../../components/UI/Spinner/Spinner'
 import Modal from '../../components/UI/Modal/Modal'
 import { fetchOrder } from '../../store/actions/index'
+import './Basket.css'
 
 class Basket extends Component {
     state = {
@@ -25,7 +26,7 @@ class Basket extends Component {
     }
 
     confirmationHandler = (isConfirm) => {
-        this.setState({didConfirm: isConfirm, openModal: false})
+        this.setState({ didConfirm: isConfirm, openModal: false })
     }
 
     render() {
@@ -47,12 +48,12 @@ class Basket extends Component {
         }
 
         return (
-            <Fragment>
+            <div className="main_div-basket">
                 <Modal display={this.state.openModal} clicked={this.confirmationHandler.bind(this)}>
-                    <h1>Basket</h1>
+                    <h2>Basket</h2>
                     {basketContent}
                 </Modal>
-            </Fragment>
+            </div>
         )
     }
 }

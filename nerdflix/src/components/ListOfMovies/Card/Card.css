@@ -39,6 +39,7 @@
 
 .item_div--content p{
     line-height: 0.8;
+    font-size: 1rem;
     margin: 8px;
     color: var(--primary_color);
 }
