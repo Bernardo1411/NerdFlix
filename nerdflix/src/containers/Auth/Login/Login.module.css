@@ -32,6 +32,7 @@
 
 .errorMessage{
     color: #b31111;
+    font-size: 1rem;
     width: 50%;
     margin: 0.15rem auto;
 }
