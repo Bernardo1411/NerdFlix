@@ -4,7 +4,7 @@ import './confirmationCheck.css'
 
 const confirmationCheck = props => {
 
-    return(
+    return (
         <div className='confirmationCheck'>
             {props.children}
         </div>

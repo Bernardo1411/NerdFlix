@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 
 import BestSellers from '../../components/BestSellers/BestSellers'
 import Store from '../../components/Store/Store'
+import Carousel from '../../components/UI/Carousel/Carousel'
 import { initMovies, order } from '../../store/actions/index'
 import Spinner from '../../components/UI/Spinner/Spinner'
 import Modal from '../../components/UI/Modal/Modal'
@@ -34,6 +35,7 @@ class InitPage extends Component {
         const store = this.props.isLoaded ?
             <Fragment>
                 <Modal display={this.state.displayModal} clicked={this.showModal.bind(this)} isAlert={true}>
+                    <Carousel />
                     <BestSellers
                         movies={movies}
                         isForSale={false} />

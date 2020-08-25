@@ -1,0 +1,55 @@
+section{
+    width: 100%;
+    height: 100%;
+}
+
+.active{
+    display: block;
+    height: 100%;
+}
+
+.inactive{
+    display: none;
+}
+
+.yellow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(109, 98, 1);
+    color: rgb(255, 255, 255);
+    width: 100%;
+    height: 100%;
+}
+
+.yellow h1{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.red{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(107, 11, 4);
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.red h1{
+    font-family: monospace;
+}
+
+.black{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(24, 24, 24);
+    color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.black h1{
+    font-family: fantasy;
+}
