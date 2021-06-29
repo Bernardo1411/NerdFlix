@@ -1,0 +1,11 @@
+.store_div-list{
+    list-style: none;
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-auto-rows: 1fr;
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    padding: 0;
+    justify-items: center;
+}

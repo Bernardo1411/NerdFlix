@@ -1,22 +1,12 @@
 import React from 'react'
 
-import Button from '../UI/Button/Button'
+import './confirmationCheck.css'
 
 const confirmationCheck = props => {
 
-    const confirm = () => {
-        props.clicked(true)
-    }
-
-    const cancel = () => {
-        props.clicked(false)
-    }
-
-    return(
-        <div>
+    return (
+        <div className='confirmationCheck'>
             {props.children}
-            <Button clicked={confirm}>OK</Button>
-            <Button clicked={cancel}>Cancel</Button>
         </div>
     )
 }

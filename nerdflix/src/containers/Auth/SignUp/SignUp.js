@@ -3,9 +3,10 @@ import {connect} from 'react-redux'
 
 import Input from '../../../components/UI/Input/Input'
 import Button from '../../../components/UI/Button/Button'
-import { updateObject } from '../../../shared/utility'
+import { updateObject, checkValidity } from '../../../shared/utility'
 import * as actionType from '../../../store/actions/index'
 import Spinner from '../../../components/UI/Spinner/Spinner'
+import classes from './SignUp.module.css'
 
 class SignUp extends Component {
     state = {
@@ -53,7 +54,7 @@ class SignUp extends Component {
                 elementType: 'select',
                 elementConfig: {
                     type: 'select',
-                    option: ['Brazil', 'EUA', 'Europe'],
+                    option: ['Brazil', 'US', 'Europe'],
                 },
                 value: 'Brazil',
                 label: 'Location'
@@ -69,7 +70,10 @@ class SignUp extends Component {
 
     inputValueHandler = (event, inputName) => {
         const newFormControl = updateObject(this.state.formControl, {
-            [inputName]: updateObject(this.state.formControl[inputName], { value: event.target.value })
+            [inputName]: updateObject(this.state.formControl[inputName], { value: event.target.value,
+              valid: checkValidity(event.target.value, this.state.formControl[inputName].validation),
+              touched: true
+            })
         })
 
         this.setState({ formControl: newFormControl })
@@ -109,12 +113,15 @@ class SignUp extends Component {
         }
 
         return (
-            <div>
-                <h1>SignUp</h1>
-                <form onSubmit={this.submitAuthHandler}>
+            <div className={classes.Login}>
+                <h2>Sign-up</h2>
+                <form 
+                className={classes.Form}
+                onSubmit={this.submitAuthHandler}>
                     {form}
-                    <Button>SUBMIT</Button>
-                    <p>{this.props.error}</p>
+                    <Button
+                    disabled={!(this.state.formControl.email.valid && this.state.formControl.password.valid)}>SUBMIT</Button>
+                    <p className={classes.errorMessage}>{this.props.error}</p>
                 </form>
             </div>
         )

@@ -1,6 +1,7 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
 import ListOfMovies from '../ListOfMovies/ListOfMovies'
+import './Store.css'
 
 const store = props => {
     const { movies, error } = props.movies
@@ -13,10 +14,10 @@ const store = props => {
             showButton={showButton} /> : <p>{error}</p>
 
     return (
-        <Fragment>
+        <div className="main_div-store">
             <h2>Store</h2>
             {listOfMovies}
-        </Fragment>
+        </div>
     )
 }
 

@@ -7,7 +7,8 @@ import PurchaseCompleted from '../../components/PurchaseCompleted/PurchaseComple
 import Button from '../../components/UI/Button/Button'
 import Spinner from '../../components/UI/Spinner/Spinner'
 import Modal from '../../components/UI/Modal/Modal'
-import { fetchOrder } from '../../store/actions/index'
+import { fetchOrder, removeOrder } from '../../store/actions/index'
+import './Basket.css'
 
 class Basket extends Component {
     state = {
@@ -25,13 +26,19 @@ class Basket extends Component {
     }
 
     confirmationHandler = (isConfirm) => {
-        this.setState({didConfirm: isConfirm, openModal: false})
+        this.setState({ didConfirm: isConfirm, openModal: false })
+    }
+
+    removeItem = (orderId) => {
+        this.props.removeOrder(this.props.userId, orderId.title, this.props.idToken)
     }
 
     render() {
         let basketContent =
             <Fragment>
                 <ListOfMovies
+                    showButton={'Remove'}
+                    movieBuyer={this.removeItem.bind(this)}
                     movies={this.props.orderedMovies} />
                 <NavLink to={this.props.match.url + '/purchased'}>
                     <Button clicked={this.completeOrder}>Complete Order</ Button>
@@ -47,12 +54,12 @@ class Basket extends Component {
         }
 
         return (
-            <Fragment>
+            <div className="main_div-basket">
                 <Modal display={this.state.openModal} clicked={this.confirmationHandler.bind(this)}>
-                    <h1>Basket</h1>
+                    <h2>Basket</h2>
                     {basketContent}
                 </Modal>
-            </Fragment>
+            </div>
         )
     }
 }
@@ -68,7 +75,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchOrder: (userId, idToken) => dispatch(fetchOrder(userId, idToken))
+        fetchOrder: (userId, idToken) => dispatch(fetchOrder(userId, idToken)),
+        removeOrder: (userId, orderId, idToken) => dispatch(removeOrder(userId, orderId, idToken))
     }
 }
 

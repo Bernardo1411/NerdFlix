@@ -9,16 +9,39 @@ export const orderStart = () => {
 }
 
 export const orderSuccess = (movieData) => {
-    return{
+    return {
         type: actionType.ORDER_SUCCESS,
         movieData
     }
 }
 
 export const orderFailed = (error) => {
-    return{
+    return {
         type: actionType.ORDER_FAILED,
         error
+    }
+}
+
+export const removeOrderSuccess = () => {
+    return {
+        type: actionType.REMOVE_ORDER_SUCCESS
+    }
+}
+
+export const removeOrderFail = () => {
+    return {
+        type: actionType.REMOVE_ORDER_FAIL
+    }
+}
+
+export const removeOrder = ( userId, orderId, idToken) => {
+    return dispatch => {
+        axios.delete(`/user/${userId}/order/${orderId}.json`)
+            .then(res => {
+                dispatch(fetchOrder(userId, idToken))
+            }).catch(err => {
+                dispatch(removeOrderFail)
+            })
     }
 }
 
@@ -35,12 +58,12 @@ export const order = (movie, userId, token) => {
     return dispatch => {
         dispatch(orderStart())
         axios.post(`/user/${userId}/order.json?auth=` + token, movieData)
-        .then(res => {
-            dispatch(orderSuccess(movieData))
-        })
-        .catch(error => {
-            dispatch(orderFailed(error))
-        })
+            .then(res => {
+                dispatch(orderSuccess(movieData))
+            })
+            .catch(error => {
+                dispatch(orderFailed(error))
+            })
     }
 }
 
@@ -67,12 +90,12 @@ export const fetchOrderFailed = (error) => {
 export const fetchOrder = (userId, idToken) => {
     return dispatch => {
         dispatch(fetchOrderStart())
-        axios.get(`/user/${userId}/order.json?auth=` + idToken )
-        .then(res => {
-            dispatch(fetchOrderSuccess(res.data))
-        })
-        .catch(error => {
-            dispatch(fetchOrderFailed(error))
-        })
+        axios.get(`/user/${userId}/order.json?auth=` + idToken)
+            .then(res => {
+                dispatch(fetchOrderSuccess(res.data))
+            })
+            .catch(error => {
+                dispatch(fetchOrderFailed(error))
+            })
     }
 }

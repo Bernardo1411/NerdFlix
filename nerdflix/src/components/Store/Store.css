@@ -1,0 +1,22 @@
+.main_div-store{
+    margin: 20px;
+    padding: 20px 40px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_div-store h2{
+    color: var(--primary_color);
+    font-size: 1.5rem;
+    border: solid 5px;
+    width: 100%;
+    margin: 5px 5px 40px 5px;
+    padding: 5px 40px;
+    border: solid 5px var(--background-color);
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px 4px;
+    background: var(--background-color)
+}

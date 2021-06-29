@@ -3,9 +3,11 @@ import { connect } from 'react-redux'
 
 import BestSellers from '../../components/BestSellers/BestSellers'
 import Store from '../../components/Store/Store'
+import Carousel from '../../components/UI/Carousel/Carousel'
 import { initMovies, order } from '../../store/actions/index'
 import Spinner from '../../components/UI/Spinner/Spinner'
 import Modal from '../../components/UI/Modal/Modal'
+import './InitPage.css'
 
 class InitPage extends Component {
     state = {
@@ -33,21 +35,21 @@ class InitPage extends Component {
         const store = this.props.isLoaded ?
             <Fragment>
                 <Modal display={this.state.displayModal} clicked={this.showModal.bind(this)} isAlert={true}>
+                    <Carousel />
                     <BestSellers
                         movies={movies}
                         isForSale={false} />
                     <Store
                         movies={movies}
-                        showButton={true}
+                        showButton={'Buy Now'}
                         movieBuyer={this.buyMovieHandler.bind(this)} />
                 </Modal>
             </Fragment> : <Spinner />
 
         return (
-            <Fragment>
-                <h1>INITPAGE</h1>
+            <div className="main-page">
                 {store}
-            </Fragment>
+            </div>
         )
     }
 }

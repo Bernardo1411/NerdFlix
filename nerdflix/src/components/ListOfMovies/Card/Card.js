@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import Button from '../../UI/Button/Button'
+import './Card.css'
 
 const card = props => {
     const { runningTime, IMDb, buyers, title, movieBuyer, showButton, image } = props
@@ -17,19 +18,20 @@ const card = props => {
         })
     }
 
-    let button = showButton ? <Button clicked={movieDataProvider} >Buy Now</Button> : null
+    let button = showButton ? <Button
+clicked={movieDataProvider} >{showButton}</Button> : null
 
     return (
-        <div>
+        <li className="store-list_item">
             <img src={image} alt='Movie figure' />
-            <div>
+            <div className='item_div--content'>
                 <h4>{title}</h4>
                 <p>Running Time: {runningTime} minutes</p>
                 <p>IMDb: {IMDb}</p>
                 <p>Buyers: {buyers}</p>
             </div>
-            {button}
-        </div>
+                {button}
+        </li>
     )
 }
 

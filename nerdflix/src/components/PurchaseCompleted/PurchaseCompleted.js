@@ -1,4 +1,6 @@
-import React, { useReducer, useEffect, Fragment } from 'react'
+import React, { useReducer, useEffect } from 'react'
+
+import './PurchaseCompleted.css'
 
 const initialState = {
     time: 3
@@ -34,10 +36,10 @@ const PurchaseCompleted = (props) => {
     }, [props.history])
 
     return (
-        <Fragment>
-            <h1>Purchase Completed!</h1>
+        <div className='basket_div-purchase'>
+            <h3>Purchase Completed!</h3>
             <p>You will be redirected in {state.time} minutes</p>
-        </Fragment>
+        </div>
     )
 }
 

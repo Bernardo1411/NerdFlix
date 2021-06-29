@@ -2,14 +2,14 @@ import React from 'react'
 
 import NavigationItems from './NavigationItems/NavigationItems'
 import Logo  from '../UI/Logo/Logo'
+import './Navigation.css'
 
 const navigation = props => {
     return(
-        <div>
-            <h1>Navigation</h1>
+        <nav className="main_nav">
             <Logo />
             <NavigationItems />
-        </div>
+        </nav>
     )
 }
 
