@@ -1,6 +1,4 @@
-import React from 'react'
-
-import './LeftArrow.css'
+import React from 'react';
 
 const leftArrow = props => {
 

@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 
-import LeftArrow from '../LeftArrow/LeftArrow'
-import RightArrow from '../RightArrow/RightArrow'
 import './Slide.css'
 
 class Slide extends Component {
+    constructor(){
+        super();
+
+        this.timer = '';
+    }
+
     state = {
         data: [
             {
@@ -23,32 +27,38 @@ class Slide extends Component {
     }
 
     componentDidMount(){
-        setInterval(()=>{
+        setTimeout(() => {
+            this.props.goToNextSlide();
+        }, 10000);
+    }
+
+    componentDidUpdate(){
+        clearInterval(this.timer);
+
+        this.timer = setInterval(()=>{
             return this.props.goToNextSlide()
-        }, 5000)
+        }, 10000)
     }
 
     render() {
+        const {activeIndex, prevSlide, opposite} = this.props;
         return (
-            <section>
+            <div className="items">
                 {
                     this.state.data.map((movie, index) => {
                         return (
                             <div
-                                className={index === this.props.activeIndex ? 'active' : 'inactive'}
+                                className={
+                                    `${index === activeIndex ? 'currentSlide' : index === prevSlide ? 'pastSlide' : 'slide'} ${opposite ? 'opposite' : ''}`}
                                 key={index}>
                                 <div className={movie.color}>
-                                    <LeftArrow
-                                        goToPrevSlide={() => this.props.goToPrevSlide()} />
                                     <h1>{movie.title}</h1>
-                                    <RightArrow
-                                        goToNextSlide={() => this.props.goToNextSlide()} />
                                 </div>
                             </div>
                         )
                     })
                 }
-            </section>
+            </div>
         )
     }
 }

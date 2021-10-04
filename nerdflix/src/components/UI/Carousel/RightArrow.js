@@ -1,9 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const rightArrow = props => {
 
     return(
-        <div className='backArrow' onClick={props.goToNextSlide}>
+        <div className='fowardArrow' onClick={props.goToNextSlide}>
             <p>{'>'}</p>
         </div>
     )
