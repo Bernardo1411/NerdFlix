@@ -1,11 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Button from '../../UI/Button/Button'
-import './Card.css'
+import Button from '../../UI/Button/Button';
+import './Card.css';
 
 const card = props => {
-    const { runningTime, IMDb, buyers, title, movieBuyer, showButton, image } = props
+    const { runningTime, IMDb, buyers, title, movieBuyer, showButton, image } = props;
 
     const movieDataProvider = (e) => {
         e.preventDefault()
@@ -14,16 +14,16 @@ const card = props => {
             IMDb,
             runningTime,
             image,
-            buyers
+            buyers,
         })
-    }
+    };
 
     let button = showButton ? <Button
-clicked={movieDataProvider} >{showButton}</Button> : null
+clicked={movieDataProvider} >{showButton}</Button> : null;
 
     return (
         <li className="store-list_item">
-            <img src={image} alt='Movie figure' />
+            <img src={require(`../../../assets/images/${image}`)} alt='Movie figure' />
             <div className='item_div--content'>
                 <h4>{title}</h4>
                 <p>Running Time: {runningTime} minutes</p>
@@ -33,13 +33,13 @@ clicked={movieDataProvider} >{showButton}</Button> : null
                 {button}
         </li>
     )
-}
+};
 
 card.propTypes = {
     runningTime: PropTypes.number.isRequired,
     IMDb: PropTypes.number.isRequired,
     title: PropTypes.string.isRequired,
-    buyers: PropTypes.number.isRequired
-}
+    buyers: PropTypes.number.isRequired,
+};
 
-export default card
+export default card;

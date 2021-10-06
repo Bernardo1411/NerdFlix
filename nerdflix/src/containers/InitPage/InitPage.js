@@ -38,13 +38,13 @@ class InitPage extends Component {
                     <Carousel />
                     <BestSellers
                         movies={movies}
-                        isForSale={false} />
+                        isForSale={false} /> 
                     <Store
                         movies={movies}
                         showButton={'Buy Now'}
                         movieBuyer={this.buyMovieHandler.bind(this)} />
                 </Modal>
-            </Fragment> : <Spinner />
+            </Fragment> : <Spinner isFullPage />
 
         return (
             <div className="main-page">

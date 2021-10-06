@@ -38,7 +38,7 @@ const PurchaseCompleted = (props) => {
     return (
         <div className='basket_div-purchase'>
             <h3>Purchase Completed!</h3>
-            <p>You will be redirected in {state.time} minutes</p>
+            <p>You will be redirected in {state.time} seconds</p>
         </div>
     )
 }
