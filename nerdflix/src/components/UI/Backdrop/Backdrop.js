@@ -9,7 +9,6 @@ const backDrop = (props) => {
 
     return(
         <div onClick={close} className='backdrop'>
-            <h1>Backdrop</h1>
         </div>
     )
 }

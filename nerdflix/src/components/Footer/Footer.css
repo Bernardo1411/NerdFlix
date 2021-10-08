@@ -21,4 +21,11 @@
     margin: 0 auto;
     color: #3f3f3f;
     font-size: 2rem;
+    margin: 0 1rem;
+}
+
+@media (max-width: 480px) {
+    .main-page_footer h2 {
+        font-size: 1.5rem;
+    }
 }

@@ -50,7 +50,7 @@ class Basket extends Component {
         }
 
         if (!this.props.isLoaded) {
-            basketContent = <Spinner />
+            basketContent = <Spinner isFullPage />
         }
 
         return (

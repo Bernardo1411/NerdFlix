@@ -23,3 +23,10 @@
         transform: translateY(0);
     }
 }
+
+@media (max-width: 768px) {
+    .confirmationCheck {
+        width: 90%;
+        padding: 1rem;
+    }
+}

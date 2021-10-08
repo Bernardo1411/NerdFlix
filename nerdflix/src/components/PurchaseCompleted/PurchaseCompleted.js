@@ -36,10 +36,12 @@ const PurchaseCompleted = (props) => {
     }, [props.history])
 
     return (
-        <div className='basket_div-purchase'>
-            <h3>Purchase Completed!</h3>
-            <p>You will be redirected in {state.time} seconds</p>
-        </div>
+        <main>
+            <div className='basket_div-purchase'>
+                <h3>Purchase Completed!</h3>
+                <p>You will be redirected in {state.time} seconds</p>
+            </div>
+        </main>
     )
 }
 
