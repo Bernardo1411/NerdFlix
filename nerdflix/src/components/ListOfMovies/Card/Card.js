@@ -23,7 +23,7 @@ clicked={movieDataProvider} >{showButton}</Button> : null;
 
     return (
         <li className="store-list_item">
-            <img src={require(`../../../assets/images/${image}`)} alt='Movie figure' />
+            <img src={require(`../../../assets/images/${image}`)} alt={title} />
             <div className='item_div--content'>
                 <h4>{title}</h4>
                 <p>Running Time: {runningTime} minutes</p>

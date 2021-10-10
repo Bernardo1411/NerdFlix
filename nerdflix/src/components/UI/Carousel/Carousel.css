@@ -13,6 +13,7 @@
     position: absolute;
     top: auto;
     overflow: hidden;
+    border-bottom: 5px solid rgb(24, 24, 24);
 }
 
 .backArrow {

@@ -13,15 +13,18 @@ class Slide extends Component {
         data: [
             {
                 title: 'Terminator',
-                color: 'red'
+                color: 'red',
+                description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.'
             },
             {
-                title: ' The Hangover',
-                color: 'yellow'
+                title: 'The Hangover',
+                color: 'yellow',
+                description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.'
             },
             {
                 title: 'The Conjuring',
-                color: 'black'
+                color: 'black',
+                description: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.'
             }
         ]
     }
@@ -52,7 +55,10 @@ class Slide extends Component {
                                     `${index === activeIndex ? 'currentSlide' : index === prevSlide ? 'pastSlide' : 'slide'} ${opposite ? 'opposite' : ''}`}
                                 key={index}>
                                 <div className={movie.color}>
-                                    <h1>{movie.title}</h1>
+                                    <div className="slider-banner">
+                                        <h1>{movie.title}</h1>
+                                        <p>{movie.description}</p>
+                                    </div>
                                 </div>
                             </div>
                         )
