@@ -1,5 +1,6 @@
 main {
-    height: 65vh;
+    width: 90%;
+    height: calc(75vh - 6rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -8,7 +9,7 @@ main {
 
 .basket_div-purchase {
     width: 100%;
-    height: 200px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -40,7 +40,7 @@ class Carousel extends Component{
                 this.setState({
                     isClick: true,
                 })
-            }, 2000);
+            }, 1500);
         }
     }
 

@@ -1,5 +1,7 @@
 .main-page_footer{
     display: flex;
+    height: 25vh;
+    width: 100vw;
     bottom: 0;
     align-items: center;
     justify-content: left;
@@ -18,14 +20,25 @@
 }
 
 .main-page_footer h2{
-    margin: 0 auto;
     color: #3f3f3f;
     font-size: 2rem;
     margin: 0 1rem;
 }
 
 @media (max-width: 480px) {
+    .main-page_footer{
+        height: 15vh;
+    }
+
     .main-page_footer h2 {
-        font-size: 1.5rem;
+        font-size: 0.8rem;
+        margin-left: 0.1;
+    }
+
+    .main-page_footer p{
+        color: #3f3f3f;
+        font-size: 0.7rem;
+        line-height: 0.6;
+        white-space: nowrap;
     }
 }

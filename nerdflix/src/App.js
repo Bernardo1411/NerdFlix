@@ -22,7 +22,7 @@ class App extends Component {
 
   render() {
     let renderedComponents =
-      <Suspense fallback={<Spinner isFullPage />}>
+      <Suspense className="suspense" fallback={<Spinner isFullPage />}>
         <Switch>
           <Route path='/login' component={asyncLogin} />
           <Route path='/signup' component={asyncSignup} />

@@ -1,6 +1,6 @@
 .Login{
-    width: 100%;
-    height: 70%;
+    width: 100vw;
+    height: calc(75vh - 6rem);;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,6 +12,8 @@
     font-size: 1.5rem;
     border: solid 5px;
     width: 50%;
+    min-width: 20rem;
+    max-width: 40rem;
     margin: 5px 5px 40px 5px;
     padding: 5px 40px;
     border: solid 5px var(--background-color);
@@ -34,4 +36,20 @@
     font-size: 1rem;
     width: 50%;
     margin: 0.15rem auto;
+}
+
+@media (max-width: 1030px) {
+    .Login h2{
+        width: 85vw;
+    }
+
+    .Form{
+        width: 85vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .Login{
+        height: calc(85vh - 6rem);
+    }
 }

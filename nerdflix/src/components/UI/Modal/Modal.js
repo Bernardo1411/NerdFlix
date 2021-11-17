@@ -6,7 +6,7 @@ import BackDrop from '../Backdrop/Backdrop'
 import './Modal.css'
 
 const modal = props => {
-    const { isAlert } = props
+    const { isAlert, message } = props
 
     const confirm = () => {
         props.clicked(true)
@@ -29,7 +29,7 @@ const modal = props => {
                             <Button clicked={cancel}>Cancel</Button>
                         </ConfirmationCheck> :
                         <ConfirmationCheck>
-                            <p>Added to your basket</p>
+                            <p>{message}</p>
                         </ConfirmationCheck>
                 }
                 {props.children}

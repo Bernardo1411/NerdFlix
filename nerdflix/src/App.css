@@ -1,36 +1,46 @@
-:root{
-    --primary_color: #1295b6;
-    --auxiliary-color: #07458b ;
-    --secondary-color: #7e7a7a;
-    --background-color: #1d1d1d;
-    --logo-background: linear-gradient(to left top, var(--auxiliary-color), var(--primary_color), #fff);
-    --background-nav: linear-gradient(to bottom, var(--secondary-color) 65%, #6e6e6e 80%, #5c5c5c 90%, #3f3f3f 98%);
+:root {
+  --primary_color: #1295b6;
+  --auxiliary-color: #07458b;
+  --secondary-color: #7e7a7a;
+  --background-color: #1d1d1d;
+  --logo-background: linear-gradient(
+    to left top,
+    var(--auxiliary-color),
+    var(--primary_color),
+    #fff
+  );
+  --background-nav: linear-gradient(
+    to bottom,
+    var(--secondary-color) 65%,
+    #6e6e6e 80%,
+    #5c5c5c 90%,
+    #3f3f3f 98%
+  );
 }
 
-*{
-    box-sizing: border-box;
-    font-family: 'Lato', sans-serif
+* {
+  box-sizing: border-box;
+  font-family: "Lato", sans-serif;
 }
 
-html{
-    width: 100%;
-    height: 100%;
+html {
+  width: 100vw;
+  height: 100vh;
 }
 
-body{
-    width: 100%;
-    height: 100%;
-    margin:0;
-    margin-top: 6rem;
+body {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
 }
 
-#root{
-    height: 100%;
-    width: 100%;
+#root {
+  height: 100vh;
+  width: 100vw;
 }
 
-.App{
-    background: #494949;
-    width: 100%;
-    height: 100%;
+.App {
+  background: #494949;
+  width: 100vw;
+  height: 100vh;
 }

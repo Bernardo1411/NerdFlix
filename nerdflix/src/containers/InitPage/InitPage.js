@@ -30,11 +30,12 @@ class InitPage extends Component {
     }
 
     render() {
-        const movies = this.props.movies
+        const movies = this.props.movies;
+        const { isAuth } = this.props;
 
         const store = this.props.isLoaded ?
             <Fragment>
-                <Modal display={this.state.displayModal} clicked={this.showModal.bind(this)} isAlert={true}>
+                <Modal display={this.state.displayModal} clicked={this.showModal.bind(this)} isAlert={true} message={isAuth ? 'Added to your cart!' : 'You are not logged in.'}>
                     <Carousel />
                     <BestSellers
                         movies={movies}
@@ -57,7 +58,8 @@ class InitPage extends Component {
 const mapStateToProps = state => {
     return {
         movies: state.movies,
-        isLoaded: state.movies.isLoaded
+        isLoaded: state.movies.isLoaded,
+        isAuth: state.auth.idToken !== null,
     }
 }
 

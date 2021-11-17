@@ -19,16 +19,16 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    animation: newslide 2s ease-out forwards
+    animation: newslide 1.5s ease-out forwards
 }
 
 .currentSlide.opposite{
-    animation: newslideOpposite 2s ease-out forwards
+    animation: newslideOpposite 1.5s ease-out forwards
 }
 
 @keyframes newslide {
     0%{
-        transform: translatex(-100%);
+        transform: translatex(100%);
         display: block;
     }
     100%{
@@ -39,7 +39,7 @@
 
 @keyframes newslideOpposite {
     0%{
-        transform: translatex(100%);
+        transform: translatex(-100%);
         display: block;
     }
     100%{
@@ -53,23 +53,14 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    animation: prevslide 2s ease-out forwards;
+    animation: prevslide 1.5s ease-out forwards;
 }
 
 .pastSlide.opposite{
-    animation: prevslideOpposite 2s ease-out forwards
+    animation: prevslideOpposite 1.5s ease-out forwards
 }
 
 @keyframes prevslide {
-    0%{
-        transform: translatex(0%);
-    }
-    100%{
-        transform: translatex(100%);
-    }
-}
-
-@keyframes prevslideOpposite {
     0%{
         transform: translatex(0%);
     }
@@ -78,7 +69,16 @@
     }
 }
 
-.yellow{
+@keyframes prevslideOpposite {
+    0%{
+        transform: translatex(0%);
+    }
+    100%{
+        transform: translatex(100%);
+    }
+}
+
+.yellow {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -90,7 +90,7 @@
     height: 100%;
 }
 
-.yellow h1{
+.yellow h1 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -151,10 +151,10 @@
     } 
 }
 
-@media (max-width: 470px) {
+@media (max-width: 480px) {
     .slider-banner {
         height: 90%;
-        width: 50%;
+        width: 60%;
     } 
 
     .slider-banner p {

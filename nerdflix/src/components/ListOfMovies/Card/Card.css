@@ -2,7 +2,9 @@
     width: 95%;
     min-width: 220px;
     max-width: 280px;
-    height: 95%;
+    height: 60vh;
+    min-height: 400px;
+    max-height: 500px;
     display: flex;
     flex-direction: column;
     border: solid 5px var(--background-color);

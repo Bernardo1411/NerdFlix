@@ -1,6 +1,9 @@
 .spinnerBody {
-  height: 100vh;
+  height: calc(75vh - 6rem);
   width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .loader,
@@ -58,5 +61,11 @@
   }
   40% {
     box-shadow: 0 2.5em 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .spinnerBody{
+      height: calc(85vh - 6rem);
   }
 }
