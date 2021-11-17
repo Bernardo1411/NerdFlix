@@ -33,15 +33,14 @@ class Slide extends Component {
   };
 
   componentDidMount() {
-
     setTimeout(() => {
       this.props.goToNextSlide();
     }, 10000);
   }
 
   componentDidUpdate() {
+    
     clearInterval(this.timer);
-
     this.timer = setInterval(() => {
       return this.props.goToNextSlide();
     }, 10000);
