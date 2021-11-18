@@ -10,7 +10,7 @@ class Carousel extends Component{
         activeIndex: 0,
         length: 3,
         opposite: false,
-        prevSlide: 1,
+        prevSlide: 2,
         isClick: true,
     };
 

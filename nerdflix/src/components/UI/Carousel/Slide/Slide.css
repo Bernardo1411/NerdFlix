@@ -11,7 +11,8 @@
 .slide {
     display: block;
     position: absolute;
-    transform: translatex(-100%);
+    transform: translateX(100%);
+    transition: transform 1.5s ease-out;
 }
 
 .currentSlide {
@@ -19,33 +20,9 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    animation: newslide 1.5s ease-out forwards
-}
-
-.currentSlide.opposite{
-    animation: newslideOpposite 1.5s ease-out forwards
-}
-
-@keyframes newslide {
-    0%{
-        transform: translatex(100%);
-        display: block;
-    }
-    100%{
-        transform: translatex(0%);
-        display: block;
-    }
-}
-
-@keyframes newslideOpposite {
-    0%{
-        transform: translatex(-100%);
-        display: block;
-    }
-    100%{
-        transform: translatex(0%);
-        display: block;
-    }
+    z-index: 2;
+    transform: translateX(0);
+    transition: transform 1.5s ease-out;
 }
 
 .pastSlide{
@@ -53,29 +30,24 @@
     position: absolute;
     height: 100%;
     width: 100%;
-    animation: prevslide 1.5s ease-out forwards;
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: transform 1.5s ease-out;
+}
+
+.currentSlide.opposite{
+    transform: translateX(0);
+    transition: transform 1.5s ease-out;
+}
+
+.slide.opposite {
+    transform: translateX(-100%);
+    transition: transform 1.5s ease-out;
 }
 
 .pastSlide.opposite{
-    animation: prevslideOpposite 1.5s ease-out forwards
-}
-
-@keyframes prevslide {
-    0%{
-        transform: translatex(0%);
-    }
-    100%{
-        transform: translatex(-100%);
-    }
-}
-
-@keyframes prevslideOpposite {
-    0%{
-        transform: translatex(0%);
-    }
-    100%{
-        transform: translatex(100%);
-    }
+    transform: translateX(100%);
+    transition: transform 1.5s ease-out;
 }
 
 .yellow {
