@@ -39,12 +39,11 @@ class Slide extends Component {
   }
 
   componentDidUpdate() {
-    
     clearInterval(this.timer);
     this.timer = setInterval(() => {
       return this.props.goToNextSlide();
     }, 10000);
-  }
+  } 
 
   render() {
     const { activeIndex, prevSlide, opposite } = this.props;
@@ -63,9 +62,11 @@ class Slide extends Component {
               key={index}
             >
               <div className={movie.color}>
-                <div className="slider-banner">
-                  <h1>{movie.title}</h1>
-                  <p>{movie.description}</p>
+                <div className="fallback">
+                  <div className="slider-banner">
+                    <h1>{movie.title}</h1>
+                    <p>{movie.description}</p>
+                  </div>
                 </div>
               </div>
             </div>

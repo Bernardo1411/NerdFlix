@@ -1,16 +1,13 @@
-import React from 'react'
+import React from "react";
 
-import './Backdrop.css'
+import "./Backdrop.css";
 
 const backDrop = (props) => {
-    const close = () => {
-        props.clicked(false)
-    }
+  const close = () => {
+    props.clicked(false);
+  };
 
-    return(
-        <div onClick={close} className='backdrop'>
-        </div>
-    )
-}
+  return <div onClick={close} className="backdrop"></div>;
+};
 
-export default backDrop
+export default backDrop;

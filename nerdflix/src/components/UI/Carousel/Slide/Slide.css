@@ -1,139 +1,139 @@
 .items {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    align-items: center;
-    position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: absolute;
 }
 
 .slide {
-    display: block;
-    position: absolute;
-    transform: translateX(100%);
-    transition: transform 1.5s ease-out;
+  display: block;
+  position: absolute;
+  transform: translateX(100%);
+  transition: transform 1.5s ease-out;
 }
 
 .currentSlide {
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
-    transform: translateX(0);
-    transition: transform 1.5s ease-out;
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  transform: translateX(0);
+  transition: transform 1.5s ease-out;
 }
 
-.pastSlide{
-    display: block;
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    z-index: 2;
-    transform: translateX(-100%);
-    transition: transform 1.5s ease-out;
+.pastSlide {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+  transform: translateX(-100%);
+  transition: transform 1.5s ease-out;
 }
 
-.currentSlide.opposite{
-    transform: translateX(0);
-    transition: transform 1.5s ease-out;
+.currentSlide.opposite {
+  transform: translateX(0);
+  transition: transform 1.5s ease-out;
 }
 
 .slide.opposite {
-    transform: translateX(-100%);
-    transition: transform 1.5s ease-out;
+  transform: translateX(-100%);
+  transition: transform 1.5s ease-out;
 }
 
-.pastSlide.opposite{
-    transform: translateX(100%);
-    transition: transform 1.5s ease-out;
+.pastSlide.opposite {
+  transform: translateX(100%);
+  transition: transform 1.5s ease-out;
 }
 
 .yellow {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url('../../../../assets/images/hangoverslider.jfif');
-    background-size: cover;
-    background-position: center;
-    color: rgb(255, 255, 255);
-    width: 100%;
-    height: 100%;
+  background-image: url("../../../../assets/images/hangoverslider.jfif");
+  background-size: cover;
+  background-position: center;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
 }
 
-.yellow h1 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.red {
+  background-image: url("../../../../assets/images/terminatorslider.jfif");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  width: 100%;
+  height: 100%;
 }
 
-.red{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url('../../../../assets/images/terminatorslider.jfif');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    width: 100%;
-    height: 100%;
+.black {
+  background-image: url("../../../../assets/images/conjuringslider.jfif");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  width: 100%;
+  height: 100%;
 }
 
-.red h1{
-    font-family: monospace;
-}
-
-.black{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-image: url('../../../../assets/images/conjuringslider.jfif');
-    background-size: cover;
-    background-position: center;
-    color: white;
-    width: 100%;
-    height: 100%;
-}
-
-.black h1{
-    font-family: fantasy;
+.fallback {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(
+    to right,
+    rgb(29, 29, 29, 0.95) 35%,
+    rgb(29, 29, 29, 0.5),
+    rgba(126, 125, 122, 0.13)
+  );
 }
 
 .slider-banner {
-    height: 80%;
-    width: 25%;
-    margin-left: 2%;
-    background: rgb(24, 24, 24);
-    border-radius: 30px 30px 30px 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+  height: 100%;
+  width: 40%;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.slider-banner h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 2rem;
+  width: 100%;
+  border-bottom: solid 3px white;
 }
 
 .slider-banner p {
-    text-align: center;
-    font-size: 1.2rem;
+  text-align: center;
+  width: 80%;
+  font-size: 1.5rem;
 }
 
 @media (max-width: 900px) {
-    .slider-banner {
-        height: 90%;
-        width: 35%;
-    } 
+  .slider-banner {
+    height: 90%;
+    width: 35%;
+  }
 }
 
-@media (max-width: 480px) {
-    .slider-banner {
-        height: 90%;
-        width: 60%;
-    } 
+@media (max-width: 640px) {
+  .slider-banner {
+    height: 90%;
+    width: 60%;
+  }
 
-    .slider-banner p {
-        font-size: 1rem;
-    }
+  .slider-banner p {
+    font-size: 1rem;
+  }
 
-    .slider-banner h1 {
-        font-size: 1.3rem;
-    }
+  .slider-banner h1 {
+    font-size: 1.3rem;
+  }
 }
