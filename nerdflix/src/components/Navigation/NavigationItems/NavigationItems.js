@@ -1,41 +1,49 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from "react";
+import { connect } from "react-redux";
 
-import UserNav from './UserNav/UserNav';
-import NavigationItem from './NavigationItem/NavigationItem'
-import './NavigationItems.css'
+import UserNav from "./UserNav/UserNav";
+import NavigationItem from "./NavigationItem/NavigationItem";
+import "./NavigationItems.css";
 
-const navigationItems = props => {
-    let navItems = (
-        <ul className="nav_list">
-            <li><NavigationItem
-                exactItem={true}
-                link="/">Home</NavigationItem></li>
-            <li><NavigationItem link="/login">Sign In</NavigationItem></li>
-            <li><NavigationItem link="/signup">Sign Up</NavigationItem></li>
-        </ul>
-    )
-    
-    if (props.isAuth) {
-        navItems = (
-            <ul className="nav_list">
-                <li><NavigationItem
-                    exactItem={true}
-                    link="/">Home</NavigationItem></li>
-                <li>
-                    <UserNav />
-                </li>
-            </ul>
-        )
-    }
+const navigationItems = (props) => {
+  let navItems = (
+    <ul className="nav_list">
+      <li>
+        <NavigationItem exactItem={true} link="/">
+          Home
+        </NavigationItem>
+      </li>
+      <li>
+        <NavigationItem link="/login">Sign In</NavigationItem>
+      </li>
+      <li>
+        <NavigationItem link="/signup">Sign Up</NavigationItem>
+      </li>
+    </ul>
+  );
 
-    return navItems
-}
+  if (props.isAuth) {
+    navItems = (
+      <ul className="nav_list">
+        <li>
+          <NavigationItem exactItem={true} link="/">
+            Home
+          </NavigationItem>
+        </li>
+        <li>
+          <UserNav />
+        </li>
+      </ul>
+    );
+  }
 
-const mapStateToProps = state => {
-    return {
-        isAuth: state.auth.idToken !== null
-    }
-}
+  return navItems;
+};
 
-export default connect(mapStateToProps)(navigationItems)
+const mapStateToProps = (state) => {
+  return {
+    isAuth: state.auth.idToken !== null,
+  };
+};
+
+export default connect(mapStateToProps)(navigationItems);

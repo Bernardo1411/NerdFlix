@@ -1,12 +1,11 @@
-import React from 'react';
+import React from "react";
 
-const rightArrow = props => {
+const rightArrow = (props) => {
+  return (
+    <div className="fowardArrow" onClick={props.goToNextSlide}>
+      <p>{">"}</p>
+    </div>
+  );
+};
 
-    return(
-        <div className='fowardArrow' onClick={props.goToNextSlide}>
-            <p>{'>'}</p>
-        </div>
-    )
-}
-
-export default rightArrow
+export default rightArrow;

@@ -153,7 +153,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    auth: (email, password, name, location) => dispatch(actionType.auth(email, password, name, location, true)),
+    auth: (email, password, name, location) =>
+      dispatch(actionType.auth(email, password, name, location, true)),
   };
 };
 

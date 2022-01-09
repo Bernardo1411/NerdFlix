@@ -1,15 +1,15 @@
-import React from 'react';
+import React from "react";
 
-import classes from './Spinner.module.css';
+import classes from "./Spinner.module.css";
 
 const spinner = (props) => {
-    const isFullPage = props.isFullPage;
-    
-    return (
-    <div className={ isFullPage ? classes.spinnerBody : '' }>
-        <div className={ classes.loader }>Loading...</div>
-    </div>
-    )
-}
+  const isFullPage = props.isFullPage;
 
-export default spinner
+  return (
+    <div className={isFullPage ? classes.spinnerBody : ""}>
+      <div className={classes.loader}>Loading...</div>
+    </div>
+  );
+};
+
+export default spinner;

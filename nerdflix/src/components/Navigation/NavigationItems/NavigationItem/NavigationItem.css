@@ -1,16 +1,16 @@
-.list-item_link{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: var(--primary_color);
-    font-weight: bold;
-    height: 100%;
-    width: 100%;
+.list-item_link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--primary_color);
+  font-weight: bold;
+  height: 100%;
+  width: 100%;
 }
 
 .list-item_link:hover,
-.list-item_link.active{
-    background: var(--primary_color);
-    color: var(--background-color);
+.list-item_link.active {
+  background: var(--primary_color);
+  color: var(--background-color);
 }

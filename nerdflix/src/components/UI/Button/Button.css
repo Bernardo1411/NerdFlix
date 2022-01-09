@@ -52,13 +52,13 @@
 }
 
 .modal:active {
-    background: none;
-    box-shadow: none;
-    color: var(--auxiliary-color);
+  background: none;
+  box-shadow: none;
+  color: var(--auxiliary-color);
 }
 
 .modal.cancel:active {
-    color: rgb(163, 18, 18);
+  color: rgb(163, 18, 18);
 }
 
 .Button:disabled {

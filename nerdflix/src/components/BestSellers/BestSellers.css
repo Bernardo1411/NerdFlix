@@ -11,29 +11,35 @@
 }
 
 .cover_div-bestSeller {
-    height: 75vh;
-    width: 95vw;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-end;
-    background: linear-gradient(
-      to left,
-      rgba(28, 28, 28, 0.9) 60%,
-      rgba(28, 28, 28, 0.7) 70%,
-      rgba(28, 28, 28, 0.2) 90%
-    )
+  height: 75vh;
+  width: 95vw;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  background: linear-gradient(
+    to left,
+    rgba(28, 28, 28, 0.9) 60%,
+    rgba(28, 28, 28, 0.7) 70%,
+    rgba(28, 28, 28, 0.2) 90%
+  );
 }
 
 .image_div-bestseller {
-    width: 40vw;
-    height: 75vh;
-    border-radius: 10px 10px;
-    background-image: url(../../assets/images/terminator.jfif), url(../../assets/images/interstellar.png), url(../../assets/images/annabelle.jpg), url(../../assets/images/conjuring.jpg), url(../../assets/images/exorcist.jpg), url(../../assets/images/godfather.jpg);
-    background-position: top left, top center, top right, bottom left, bottom center, bottom right;
-    background-repeat: no-repeat;
-    background-size: 33.3333% 50%;
+  width: 40vw;
+  height: 75vh;
+  border-radius: 10px 10px;
+  background-image: url(../../assets/images/terminator.jfif),
+    url(../../assets/images/interstellar.png),
+    url(../../assets/images/annabelle.jpg),
+    url(../../assets/images/conjuring.jpg),
+    url(../../assets/images/exorcist.jpg),
+    url(../../assets/images/godfather.jpg);
+  background-position: top left, top center, top right, bottom left,
+    bottom center, bottom right;
+  background-repeat: no-repeat;
+  background-size: 33.3333% 50%;
 }
 
 img {
@@ -42,75 +48,75 @@ img {
 }
 
 .text_div-bestSeller {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
-    height: 75vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50vw;
+  height: 75vh;
 }
 
 .text_div-bestSeller h2 {
-    color: white;
-    font-size: 2.5rem;
+  color: white;
+  font-size: 2.5rem;
 }
 
 .text_div-bestSeller p {
-    color: var(--secondary-text-color);
-    font-size: 1.4rem;
-    margin-bottom: 10vh;
+  color: var(--secondary-text-color);
+  font-size: 1.4rem;
+  margin-bottom: 10vh;
 }
 
 .text_div-bestSeller a {
-    color: var(--secondary-text-color);
-    font-size: 1.4rem;
-    border-bottom: solid 2px var(--primary_color);
-    font-weight: bold;
-    text-decoration: none;
+  color: var(--secondary-text-color);
+  font-size: 1.4rem;
+  border-bottom: solid 2px var(--primary_color);
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .text_div-bestSeller a:hover {
-    color: var(--primary_color);
-    border-bottom: solid 2px var(--secondary-text-color);
+  color: var(--primary_color);
+  border-bottom: solid 2px var(--secondary-text-color);
 }
 
-@media(max-width: 800px){
-    .main_div-bestSeller {
-        flex-direction: column;
-    }
+@media (max-width: 800px) {
+  .main_div-bestSeller {
+    flex-direction: column;
+  }
 
-    .image_div-bestseller {
-        width: 90vw;
-        height: 90vh;
-    }
+  .image_div-bestseller {
+    width: 90vw;
+    height: 90vh;
+  }
 
-    .cover_div-bestSeller {
-        width: 90vw;
-        height: 90vh;
-        background: rgba(28, 28, 28, 0.78);
-    }
+  .cover_div-bestSeller {
+    width: 90vw;
+    height: 90vh;
+    background: rgba(28, 28, 28, 0.78);
+  }
 
-    .text_div-bestSeller {
-        width: 90vw;
-        height: 90vh;
-    }
+  .text_div-bestSeller {
+    width: 90vw;
+    height: 90vh;
+  }
 
-    .text_div-bestSeller h2 {
-        color: white;
-        font-size: 2rem;
-    }
-    
-    .text_div-bestSeller p {
-        color: var(--secondary-text-color);
-        font-size: 1rem;
-        margin-bottom: 10vh;
-    }
-    
-    .text_div-bestSeller a {
-        color: var(--secondary-text-color);
-        font-size: 1rem;
-        border-bottom: solid 2px var(--primary_color);
-        font-weight: bold;
-        text-decoration: none;
-    }  
+  .text_div-bestSeller h2 {
+    color: white;
+    font-size: 2rem;
+  }
+
+  .text_div-bestSeller p {
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    margin-bottom: 10vh;
+  }
+
+  .text_div-bestSeller a {
+    color: var(--secondary-text-color);
+    font-size: 1rem;
+    border-bottom: solid 2px var(--primary_color);
+    font-weight: bold;
+    text-decoration: none;
+  }
 }

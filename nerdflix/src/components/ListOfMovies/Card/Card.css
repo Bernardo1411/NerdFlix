@@ -147,11 +147,11 @@
   height: auto;
 }
 
-@media(max-width: 480px){
+@media (max-width: 480px) {
   .store-list_item {
     min-height: 360px;
   }
-  
+
   .store-list_item.item_showContent {
     width: 90vw;
     min-width: 250px;
@@ -172,7 +172,7 @@
   .item_div--content h4 {
     line-height: 0.8;
   }
-  
+
   .item_div--content p {
     line-height: 1;
     font-size: 0.9rem;

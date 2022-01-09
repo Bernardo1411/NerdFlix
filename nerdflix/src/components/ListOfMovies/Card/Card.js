@@ -5,8 +5,17 @@ import Button from "../../UI/Button/Button";
 import "./Card.css";
 
 const Card = (props) => {
-  const { runningTime, IMDb, buyers, title, price, movieBuyer, showButton, image, cancel } =
-    props;
+  const {
+    runningTime,
+    IMDb,
+    buyers,
+    title,
+    price,
+    movieBuyer,
+    showButton,
+    image,
+    cancel,
+  } = props;
 
   const [showContent, setShowContent] = useState(false);
 
@@ -23,7 +32,9 @@ const Card = (props) => {
   };
 
   let button = showButton ? (
-    <Button clicked={movieDataProvider} cancel={cancel}>{showButton}</Button>
+    <Button clicked={movieDataProvider} cancel={cancel}>
+      {showButton}
+    </Button>
   ) : null;
 
   return (
@@ -42,7 +53,7 @@ const Card = (props) => {
           <div>
             <p>+</p>
           </div>
-            <div className="cover_div--card"></div>
+          <div className="cover_div--card"></div>
         </div>
       </div>
       <div
@@ -52,7 +63,13 @@ const Card = (props) => {
         <p>Running Time: {runningTime} minutes</p>
         <p>IMDb: {IMDb}</p>
         <p>Buyers: {buyers}</p>
-        <p>Price: {price.toLocaleString('en-US', { style: 'currency', currency: 'USD' })}</p>
+        <p>
+          Price:{" "}
+          {price.toLocaleString("en-US", {
+            style: "currency",
+            currency: "USD",
+          })}
+        </p>
         <div className="item_div--button">{button}</div>
       </div>
     </li>

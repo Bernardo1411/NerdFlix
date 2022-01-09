@@ -1,9 +1,9 @@
-.main-page_layout{
-    display: flex;
-    width: 100vw;
-    height: auto;
-    padding-top: 6rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.main-page_layout {
+  display: flex;
+  width: 100vw;
+  height: auto;
+  padding-top: 6rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

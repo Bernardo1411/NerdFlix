@@ -1,50 +1,50 @@
 main {
-    width: 90%;
-    height: calc(75vh - 6rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 90%;
+  height: calc(75vh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .basket_div-purchase {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    border: solid 5px;
-    margin: 5px 5px 40px 5px;
-    padding: 10px 40px;
-    width: 100%;
-    border: solid 5px var(--background-color);
-    border-radius: 10px;
-    box-shadow: 4px 4px 10px 4px;
-    background: var(--background-color);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 5px;
+  margin: 5px 5px 40px 5px;
+  padding: 10px 40px;
+  width: 100%;
+  border: solid 5px var(--background-color);
+  border-radius: 10px;
+  box-shadow: 4px 4px 10px 4px;
+  background: var(--background-color);
 }
 
-.basket_div-purchase h3{
-    color: var(--primary_color);
-    font-size: 1.5rem;
+.basket_div-purchase h3 {
+  color: var(--primary_color);
+  font-size: 1.5rem;
 }
 
 .basket_div-purchase p {
-    font-family: monospace;
+  font-family: monospace;
 }
 
-@media ( max-width: 800px ) {
-    .basket_div-purchase {
-        position: absolute;
-        width: 100vw;
-        height: 90vh;
-        top: 6rem;
-        left: 0;
-    }
+@media (max-width: 800px) {
+  .basket_div-purchase {
+    position: absolute;
+    width: 100vw;
+    height: 90vh;
+    top: 6rem;
+    left: 0;
+  }
 }
 
-@media ( max-width: 425px ) {
-    .basket_div-purchase p {
-        font-size: 1.5rem;
-    }
+@media (max-width: 425px) {
+  .basket_div-purchase p {
+    font-size: 1.5rem;
+  }
 }
