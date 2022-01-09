@@ -1,12 +1,23 @@
 .store_div-list{
     list-style: none;
     display: grid;
-    width: 100%;
+    width: 95%;
     height: auto;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     grid-auto-rows: 1fr;
     grid-column-gap: 30px;
     grid-row-gap: 30px;
     padding: 0;
     justify-items: center;
+}
+
+@media(max-width: 770px){
+    .store_div-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-x: scroll;
+        padding: 10px;
+    }
 }

@@ -1,13 +1,13 @@
 import React from 'react'
 
-import classes from './Button.module.css'
+import './Button.css'
 
 const button = props => {
-    const {clicked, disabled} = props
+    const {clicked, disabled, cancel, receipt, modal} = props;
 
     return (
         <button 
-        className={classes.Button}
+        className={`Button ${cancel && "cancel"} ${receipt && "receipt"} ${modal && "modal"}`}
         disabled={disabled}
         onClick={clicked}>
             {props.children}

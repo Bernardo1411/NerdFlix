@@ -18,6 +18,7 @@ const input = props => {
                 {...elementConfig}
                 value={value}
                 onChange={change}
+                placeholder=""
             />
             break
         case ('textarea'):

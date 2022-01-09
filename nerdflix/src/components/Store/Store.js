@@ -14,7 +14,7 @@ const store = props => {
             showButton={showButton} /> : <p>{error}</p>
 
     return (
-        <div className="main_div-store">
+        <div className="main_div-store" id="all_movies">
             <h2>Store</h2>
             {listOfMovies}
         </div>

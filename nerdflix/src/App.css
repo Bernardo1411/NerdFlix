@@ -1,8 +1,9 @@
 :root {
   --primary_color: #1295b6;
   --auxiliary-color: #07458b;
-  --secondary-color: #7a7c7e;
-  --background-color: #1d1d1d;
+  --secondary-color: #3f3f3f;
+  --secondary-text-color: #7a7c7e;
+  --background-color: #1c1c1c;
   --logo-background: linear-gradient(
     to left top,
     var(--auxiliary-color),
@@ -26,12 +27,16 @@
 html {
   width: 100vw;
   height: 100vh;
+  scroll-behavior: smooth;
 }
 
 body {
   width: 100vw;
   height: 100vh;
   margin: 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgb(63, 63, 63, 0.8) rgba(122, 124, 126);
+  overflow-x: hidden;
 }
 
 #root {
@@ -40,7 +45,28 @@ body {
 }
 
 .App {
-  background: #494949;
+  background: var(--background-color);
   width: 100vw;
   height: 100vh;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(122, 124, 126, 0.6);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(63, 63, 63, 0.8);
+}
+
+::-webkit-scrollbar-track:hover {
+  background: rgba(122, 124, 126);
+}
+
+::-webkit-scrollbar-track:hover ::-webkit-scrollbar-track {
+  background: rgb(63, 63, 63);
 }

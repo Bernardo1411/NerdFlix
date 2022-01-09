@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import UserNav from './UserNav/UserNav';
 import NavigationItem from './NavigationItem/NavigationItem'
 import './NavigationItems.css'
 
@@ -10,8 +11,8 @@ const navigationItems = props => {
             <li><NavigationItem
                 exactItem={true}
                 link="/">Home</NavigationItem></li>
-            <li><NavigationItem link="/login">Login</NavigationItem></li>
-            <li><NavigationItem link="/signup">Signup</NavigationItem></li>
+            <li><NavigationItem link="/login">Sign In</NavigationItem></li>
+            <li><NavigationItem link="/signup">Sign Up</NavigationItem></li>
         </ul>
     )
     
@@ -21,8 +22,9 @@ const navigationItems = props => {
                 <li><NavigationItem
                     exactItem={true}
                     link="/">Home</NavigationItem></li>
-                <li><NavigationItem link="/basket">Basket</NavigationItem></li>
-                <li><NavigationItem link="/logout">Logout</NavigationItem></li>
+                <li>
+                    <UserNav />
+                </li>
             </ul>
         )
     }

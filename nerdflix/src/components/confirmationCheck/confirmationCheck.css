@@ -1,32 +1,78 @@
-.confirmationCheck{
-    position: fixed;
-    top: 30%;
-    height: 30%;
-    width: 40%;
-    z-index: 13;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #494949;
-    border-radius: 10px;
-    animation: modalAnimation 0.5s ease-out forwards;
-}
-
-@keyframes modalAnimation{
-    0%{
-        transform: translateY(-100%);
-    }
-    50%{
-        transform: translateY(30px);
-    }
-    100%{
-        transform: translateY(0);
-    }
+.confirmationCheck {
+  position: fixed;
+  top: 30%;
+  height: 30%;
+  width: 40%;
+  z-index: 13;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #494949;
+  border-radius: 10px;
 }
 
 @media (max-width: 768px) {
-    .confirmationCheck {
-        width: 90%;
-        padding: 1rem;
-    }
+  .confirmationCheck {
+    width: 90%;
+    padding: 1rem;
+  }
+}
+
+.fading-enter {
+  opacity: 0;
+}
+
+.fading-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-out;
+}
+
+.fading-exit {
+  opacity: 1;
+}
+
+.fading-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
+
+.movement-enter {
+  transform: translateY(-200%);
+}
+
+.movement-enter-active {
+  animation: modalAnimation 500ms ease-out forwards;
+}
+
+.movement-exit {
+  transform: translateY(0);
+}
+
+.movement-exit-active {
+  animation: modalAnimationExit 500ms ease-in forwards;
+}
+
+@keyframes modalAnimation {
+  0% {
+    transform: translateY(-200%);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalAnimationExit {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(-200%);
+  }
 }

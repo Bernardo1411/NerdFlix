@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { NavLink } from "react-router-dom";
 
 import "./Slide.css";
 
@@ -43,7 +44,7 @@ class Slide extends Component {
     this.timer = setInterval(() => {
       return this.props.goToNextSlide();
     }, 10000);
-  } 
+  }
 
   render() {
     const { activeIndex, prevSlide, opposite } = this.props;
@@ -66,6 +67,12 @@ class Slide extends Component {
                   <div className="slider-banner">
                     <h1>{movie.title}</h1>
                     <p>{movie.description}</p>
+                  </div>
+                  <div className="fallback_div--signup">
+                    <NavLink className="fallback_div--navlink" to={"/signup"}>
+                      <p>Click here to</p>
+                      <h2>SIGN UP NOW!</h2>
+                    </NavLink>
                   </div>
                 </div>
               </div>

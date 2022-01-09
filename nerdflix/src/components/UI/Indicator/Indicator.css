@@ -1,0 +1,41 @@
+.div_purchaseIndicator {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: rgb(207, 6, 6);
+  border-radius: 100%;
+  transform: translate(17px, -10px);
+  animation: kickBall 1s ease forwards;
+}
+
+@keyframes kickBall {
+  0% {
+    transform: translate(17px, -10px);
+    width: 8px;
+    height: 4px;
+  }
+  50% {
+    transform: translate(17px, -17px);
+    width: 4px;
+    height: 7.5px;
+  }
+  75% {
+    transform: translate(17px, -10px);
+    width: 8px;
+    height: 4px;
+  }
+  90% {
+    transform: translate(17px, -12px);
+    width: 5px;
+    height: 7px; 
+  }
+  95% {
+    transform: translate(17px, -10px);
+    width: 6.5px;
+    height: 5.5px;
+  }
+  100% {
+    width: 6px;
+    height: 6px;
+  }
+}

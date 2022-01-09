@@ -19,7 +19,7 @@
     padding: 5px 40px;
     border: solid 5px var(--background-color);
     border-radius: 10px;
-    box-shadow: 4px 4px 10px 4px;
+    box-shadow: -6px 6px 4px -4px;
     background: var(--background-color);
 }
 
@@ -28,7 +28,7 @@
     width: 50%;
     min-width: 20rem;
     max-width: 40rem;
-    background-color: #ccc/*#537a94*/;
+    background-color: var(--background-color);
     border-radius: 10px
 }
 

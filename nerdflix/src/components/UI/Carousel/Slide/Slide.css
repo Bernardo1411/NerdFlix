@@ -10,7 +10,10 @@
 
 .slide {
   display: block;
+  opacity: 0;
   position: absolute;
+  height: 100%;
+  width: 100%;
   transform: translateX(100%);
   transition: transform 1.5s ease-out;
 }
@@ -81,8 +84,8 @@
   height: 100%;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
   background: linear-gradient(
     to right,
     rgb(29, 29, 29, 0.95) 35%,
@@ -102,6 +105,52 @@
   padding: 1rem;
 }
 
+.fallback_div--signup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  border-radius: 100%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(29, 29, 29, 0.95),
+    rgb(29, 29, 29, 0.8) 50%,
+    rgb(29, 29, 29, 0.7) 55%,
+    rgb(29, 29, 29, 0.3) 60%,
+    rgba(126, 125, 122, 0) 65%
+  );
+}
+
+.fallback_div--navlink {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.fallback_div--signup p {
+  font-size: 1.2rem;
+  color: white;
+  right: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--primary_color);
+  text-decoration-thickness: 0.3rem;
+}
+
+.fallback_div--signup h2 {
+  font-size: 1.5rem;
+  right: 0;
+  text-decoration: underline;
+  text-decoration-color: var(--primary_color);
+  text-decoration-thickness: 0.3rem;
+  color: white;
+}
+
 .slider-banner h1 {
   display: flex;
   justify-content: center;
@@ -114,6 +163,7 @@
   text-align: center;
   width: 80%;
   font-size: 1.5rem;
+  color: var(--secondary-text-color);
 }
 
 @media (max-width: 900px) {
@@ -123,7 +173,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 720px) {
   .slider-banner {
     height: 90%;
     width: 60%;
@@ -135,5 +185,41 @@
 
   .slider-banner h1 {
     font-size: 1.3rem;
+  }
+
+  .fallback_div--signup {
+    width: 200px;
+    height: 200px;
+  }
+
+  .fallback_div--signup p {
+    font-size: 0.8rem;
+  }
+
+  .fallback_div--signup h2 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .slider-banner p {
+    font-size: 0.8rem;
+  }
+
+  .slider-banner h1 {
+    font-size: 1.1rem;
+  }
+
+  .fallback_div--signup {
+    width: 150px;
+    height: 150px;
+  }
+
+  .fallback_div--signup p {
+    font-size: 0.6rem;
+  }
+
+  .fallback_div--signup h2 {
+    font-size: 0.8rem;
   }
 }

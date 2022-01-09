@@ -29,6 +29,20 @@ main {
     font-size: 1.5rem;
 }
 
+.basket_div-purchase p {
+    font-family: monospace;
+}
+
+@media ( max-width: 800px ) {
+    .basket_div-purchase {
+        position: absolute;
+        width: 100vw;
+        height: 90vh;
+        top: 6rem;
+        left: 0;
+    }
+}
+
 @media ( max-width: 425px ) {
     .basket_div-purchase p {
         font-size: 1.5rem;

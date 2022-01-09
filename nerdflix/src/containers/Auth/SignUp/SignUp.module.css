@@ -1,10 +1,11 @@
 .Login{
     width: 100vw;
-    height: calc(75vh - 6rem);;
+    height: calc(75vh - 6rem);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow-y: scroll;
 }
 
 .Login h2{
@@ -18,7 +19,7 @@
     padding: 5px 40px;
     border: solid 5px var(--background-color);
     border-radius: 10px;
-    box-shadow: 4px 4px 10px 4px;
+    box-shadow: -6px 6px 4px -4px;
     background: var(--background-color);
 }
 
@@ -27,7 +28,7 @@
     width: 50%;
     min-width: 20rem;
     max-width: 40rem;
-    background-color: #ccc/*#537a94*/;
+    background-color: var(--background-color);
     border-radius: 10px
 }
 
@@ -51,5 +52,18 @@
 @media (max-width: 480px) {
     .Login{
         height: calc(85vh - 6rem);
+    }
+    .Login h2{
+        margin: 0px 0px 4.5vh 0px;;
+        padding: 0;
+    }
+    .Form{
+        padding: 0;
+    }
+}
+
+@media (max-height: 780px){
+    .Login {
+        padding-top: 2.5rem;
     }
 }

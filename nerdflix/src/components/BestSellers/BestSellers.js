@@ -1,32 +1,26 @@
-import React from 'react'
+import React from "react";
 
-import ListOfMovies from '../ListOfMovies/ListOfMovies'
-import { updateObject } from '../../shared/utility'
-import './BestSellers.css'
+import Logo from "../UI/Logo/Logo";
 
-const bestSellers = props => {
-    const { movies, error } = props.movies
-    const { showButton } = props
+import "./BestSellers.css";
 
-    let newObjectMovies = {}
-    Object.keys(movies).forEach(movieId => {
-        if (movies[movieId].buyers >= 30) {
-            newObjectMovies = updateObject(newObjectMovies, { [movieId]: movies[movieId] })
-        }
-    }
-    )
-
-    const listOfMovies = !error ?
-        <ListOfMovies
-            movies={newObjectMovies}
-            showButton={showButton} /> : <p>{error}</p>
-
-    return (
-        <div className='main_div-bestSeller'>
-            <h2>Bestsellers</h2>
-            {listOfMovies}
+const bestSellers = (props) => {
+  return (
+    <div className="main_div-bestSeller">
+      <div className="image_div-bestseller"></div>
+      <div className="cover_div-bestSeller">
+        <div className="text_div-bestSeller">
+          <Logo />
+          <h2>The best movies on the internet</h2>
+          <p>
+            Here you can find your favourite movie, with the price that fits in
+            your pocket!
+          </p>
+          <a href="#all_movies">Click here to see more.</a>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default bestSellers
+export default bestSellers;

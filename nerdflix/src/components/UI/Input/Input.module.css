@@ -8,42 +8,63 @@
     margin: 0.2rem;
 }
 
+Label {
+    font-size: 1.2rem;
+    color: var(--secondary-text-color);
+}
+
 .Input {
     display: block;
-    border: solid 1px #ebebeb;
-    background-color: #ebebeb;
     margin: 0.4rem 0;
     width: 100%;
-    border-radius: 4px;
+    height: 2.5rem;
+    border: none;
+    border-bottom: 2px solid var(--primary_color);
+    background-color: var(--backgorund-color);
+    color: var(--secondary-text-color);
+    font-size: 2rem;
 }
 
 .Input:focus {
     outline: none;
-    border: solid 1px var(--focused-valid-input);
-    box-shadow: 1px 1px 5px rgb(0, 199, 182);
+    border-bottom: solid 1px var(--focused-valid-input);
+    box-shadow: 0px 5px 5px -5px rgb(0, 199, 182);
 }
 
 .Invalid {
     outline: none;
-    border: solid 1px var(--focused-invalid-input);
-    background-color: #ebebeb;
+    border-bottom: solid 1px var(--focused-invalid-input);
+    background-color: var(--background-color);
+    color: var(--secondary-text-color);
 }
 
 .Invalid:focus {
     outline: none;
-    border: solid 1px var(--focused-invalid-input);
-    box-shadow: 1px 1px 5px #a72d2d;
+    border-bottom: solid 1px var(--focused-invalid-input);
+    box-shadow: 0px 5px 5px -5px #a72d2d;
 }
 
 .Select {
     display: block;
     outline: none;
-    border: solid 1px #ebebeb;
-    background-color: #ebebeb;
+    border: solid 1px var(--secondary-text-color);
+    background-color: var(--background-color);
+    color: var(--secondary-text-color);
 }
 
 .Select:active {
     outline: none;
-    border: solid 1px var(--focused-valid-input);
-    box-shadow: 1px 1px 5px rgb(0, 199, 182);
+    border-bottom: solid 1px var(--focused-valid-input);
+    box-shadow: 0px 0px 1px 1px rgb(0, 199, 182);
+}
+
+@media (max-width: 480px) {
+    Label {
+        font-size: 1rem;
+    }
+    
+    .Input {
+        font-size: 1.2rem;
+        height: 1.5rem;
+    }
 }

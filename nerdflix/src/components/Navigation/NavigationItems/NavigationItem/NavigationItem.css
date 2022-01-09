@@ -11,6 +11,6 @@
 
 .list-item_link:hover,
 .list-item_link.active{
-    background: linear-gradient(to bottom, var(--primary_color) 65%, #0f7791 80%, #0d6d85 90%, #0c5c70 98%);
-    color: var(--secondary-color);
+    background: var(--primary_color);
+    color: var(--background-color);
 }

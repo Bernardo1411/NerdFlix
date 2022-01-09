@@ -1,4 +1,12 @@
-p{
-    font-size: 2rem;
-    color: var(--secondary-color);
+p {
+  font-size: 2rem;
+  color: var(--secondary-text-color);
+}
+
+.modal_div--button {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }

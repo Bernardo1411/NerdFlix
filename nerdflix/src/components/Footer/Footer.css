@@ -5,8 +5,9 @@
     bottom: 0;
     align-items: center;
     justify-content: left;
-    background: linear-gradient(to top, var(--secondary-color) 65%, #6e6e6e 80%, #5c5c5c 90%, #3f3f3f 98%);
+    background: var(--background-color);
     padding: 20px;
+    border-top: solid 5px var(--secondary-color);
 }
 
 .main-page_footer div{

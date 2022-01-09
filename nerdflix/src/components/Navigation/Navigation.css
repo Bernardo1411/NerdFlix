@@ -1,11 +1,11 @@
 .main_nav {
-    display: flex;
-    position: fixed;
-    width: 100vw;
-    height: 6rem;
-    top: 0;
-    z-index: 10;
-    justify-content: space-between;
-    align-items: center;
-    background: var(--background-nav); 
+  display: flex;
+  position: fixed;
+  width: 100vw;
+  height: 6rem;
+  top: 0;
+  z-index: 10;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--background-color);
 }

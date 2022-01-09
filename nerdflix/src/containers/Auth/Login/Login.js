@@ -97,7 +97,7 @@ class Login extends Component {
 
         return (
             <div className={classes.Login}>
-                <h2>Login</h2>
+                <h2>Sign In</h2>
                 <form
                 className={classes.Form}
                 onSubmit={this.submitAuthHandler}>
