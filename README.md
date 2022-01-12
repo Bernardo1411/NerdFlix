@@ -24,7 +24,7 @@ Nerdflix is an web application that simulates an online movie store. Although st
 
   [![IMAGE ALT TEXT](https://github.com/Bernardo1411/NerdFlix/blob/master/nerdflix/src/assets/images/video_nerdflix_image.png)](https://drive.google.com/file/d/13wuJPRJ-TIxvkgzHfRuOKmh4ZnspHgf1/view?usp=sharing "Nerdflix video") 
 
-# Tecnologias utilizadas
+# technologies
 ## Authentication and database
 - Firebase
 - Firebase Auth
