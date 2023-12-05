@@ -10,19 +10,20 @@ Email: newuser@gmail.com | Password: 123456
 
 Nerdflix is an web application that simulates an online movie store. Although streaming services are commonly preferable for most users, part of customers want to buy and own the movie. This project is intended to provide an option to this public. As initialy mencioned, it's a simulator, so you can't make a true purchase.
 
+## Layout web
+### First Look
+![Web 1](/nerdflix/src/assets/images/NerdFlix1.gif)
+
+### Sign-up
+
+![Web 2](/nerdflix/src/assets/images/Nerdflix2.gif)
+
+### Adding to chart
+
+![Web 3](/nerdflix/src/assets/images/Nerdflix3.gif)
+
 ## Layout mobile
 <img src="https://github.com/Bernardo1411/NerdFlix/blob/master/nerdflix/src/assets/images/pagina_inicial_mobile.png" alt="pagina_inicial_mobile" width="250" height="500" /> <img src="https://github.com/Bernardo1411/NerdFlix/blob/master/nerdflix/src/assets/images/pagina_inicial2_mobile.png" alt="pagina_inicial_mobile" width="250" height="500" /> <img src="https://github.com/Bernardo1411/NerdFlix/blob/master/nerdflix/src/assets/images/pagina_inicial3_mobile.png" alt="pagina_inicial_mobile" width="250" height="500" />
-
-## Layout web
-![Web 1](https://github.com/Bernardo1411/NerdFlix/blob/master/nerdflix/src/assets/images/pagina_inicial_web.png)
-
-![Web 2](https://github.com/Bernardo1411/NerdFlix/blob/master/nerdflix/src/assets/images/pagina_inicial2_web.png)
-
-![Web 3](https://github.com/Bernardo1411/NerdFlix/blob/master/nerdflix/src/assets/images/pagina_inicial3_web.png)
-
-## Presentation video
-
-  [![IMAGE ALT TEXT](https://github.com/Bernardo1411/NerdFlix/blob/master/nerdflix/src/assets/images/video_nerdflix_image.png)](https://drive.google.com/file/d/13wuJPRJ-TIxvkgzHfRuOKmh4ZnspHgf1/view?usp=sharing "Nerdflix video") 
 
 # technologies
 ## Authentication and database
